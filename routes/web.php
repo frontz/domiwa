@@ -17,12 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return view('livewire.hello');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/aftermarket', function () {
+    return view('aftermarket');
+})->middleware(['auth'])->name('aftermarket');
+
+Route::get('/admins', function () {
+    return view('admins');
+})->middleware(['auth'])->name('admins');
 
 require __DIR__.'/auth.php';

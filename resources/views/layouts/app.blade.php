@@ -31,6 +31,14 @@
             <main>
                 {{ $slot }}
             </main>
+
+            <!-- Footer -->
+                <header class="bg-white shadow" style="position: absolute; width: 100%; bottom: 0">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8" >
+                        @include('layouts.footer')
+                    </div>
+                </header>
+
         </div>
     </body>
 </html>
