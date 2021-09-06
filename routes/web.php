@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +26,8 @@ Route::get('/aftermarket', function () {
     return view('aftermarket');
 })->middleware(['auth'])->name('aftermarket');
 
-Route::get('/admins', function () {
-    return view('admins');
-})->middleware(['auth'])->name('admins');
+Route::get('/users/list',
+    [UserController::class, 'index'
+])->middleware(['auth'])->name('admins');
 
 require __DIR__.'/auth.php';
