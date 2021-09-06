@@ -15,16 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->name('dashboard');
 
 Route::get('/aftermarket', function () {
     return view('aftermarket');
-})->middleware(['auth'])->name('aftermarket');
+})->name('aftermarket');
 
 Route::get('/users/list',
     [UserController::class, 'index'
