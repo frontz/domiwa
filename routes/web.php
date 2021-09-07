@@ -26,7 +26,7 @@ Route::get('/aftermarket', function () {
     return view('aftermarket');
 })->name('aftermarket');
 
-Route::get('/users/list',
+Route::get('admins',
     [UserController::class, 'index'
 ])->middleware(['auth'])->name('admins');
 
