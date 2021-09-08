@@ -9,7 +9,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <h3>Lista administratorów</h3>
                     <div class="flex flex-col">
                         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -64,8 +63,8 @@
                                                     Admin
                                                 </td>
                                                 <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                    <button class="bg-red-700 hover:bg-red-500 text-white font-bold py-2 px-4 rounded">
-                                                        Delete
+                                                    <button class="bg-red-700 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-full">
+                                                        Usuń
                                                     </button>
                                                 </td>
                                             </tr>
@@ -74,7 +73,11 @@
                                         </tbody>
 
                                     </table>
+
                                 </div>
+                                <button class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 float-right rounded-full" style="margin: 10px 22px">
+                                    Nowy
+                                </button>
                             </div>
                         </div>
                     </div>
