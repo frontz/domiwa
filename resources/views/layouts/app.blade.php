@@ -33,7 +33,7 @@
             </main>
 
             <!-- Footer -->
-            <footer class="bg-blue-600 bg-white shadow" style="position: absolute; width: 100%; bottom: 0">
+            <footer class="bg-blue-600 bg-white shadow" style="width: 100%; bottom: 0">
                  @include('layouts.footer')
             </footer>
 

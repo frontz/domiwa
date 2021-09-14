@@ -30,6 +30,10 @@ Route::get('offers/list', function() {
     return view('admins.offers');
 })->middleware(['auth'])->name('offers');
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
 Route::get('/aftermarket', function () {
     return view('aftermarket');
 })->name('aftermarket');
