@@ -1,88 +1,133 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <img src="{{ URL::to('/img/logo.jpg') }}" alt="no logo" style="width: 200px">
-            </a>
-        </x-slot>
+{{--    <x-auth-card>--}}
+{{--        <x-slot name="logo">--}}
+{{--            <a href="/">--}}
+{{--                <img src="{{ URL::to('/img/logo.jpg') }}" alt="no logo" style="width: 200px">--}}
+{{--            </a>--}}
+{{--        </x-slot>--}}
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+{{--        <!-- Session Status -->--}}
+{{--        <x-auth-session-status class="mb-4" :status="session('status')"/>--}}
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+{{--        <!-- Validation Errors -->--}}
+{{--        <x-auth-validation-errors class="mb-4" :errors="$errors"/>--}}
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+{{--        <form method="POST" action="{{ route('login') }}">--}}
+{{--        @csrf--}}
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+{{--        <!-- Email Address -->--}}
+{{--            <div>--}}
+{{--                <x-label for="email" :value="__('Email')"/>--}}
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+{{--                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required--}}
+{{--                         autofocus/>--}}
+{{--            </div> --}}
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Hasło')" />
+{{--            <!-- Password -->--}}
+{{--            <div class="mt-4">--}}
+{{--                <x-label for="password" :value="__('Hasło')"/>--}}
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
+{{--                <x-input id="password" class="block mt-1 w-full"--}}
+{{--                         type="password"--}}
+{{--                         name="password"--}}
+{{--                         required autocomplete="current-password"/>--}}
+{{--            </div>--}}
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">Pamiętaj mnie</span>
-                </label>
-            </div>
+{{--            <!-- Remember Me -->--}}
+{{--            <div class="block mt-4">--}}
+{{--                <label for="remember_me" class="inline-flex items-center">--}}
+{{--                    <input id="remember_me" type="checkbox"--}}
+{{--                           class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"--}}
+{{--                           name="remember">--}}
+{{--                    <span class="ml-2 text-sm text-gray-600">Pamiętaj mnie</span>--}}
+{{--                </label>--}}
+{{--            </div>--}}
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}" style="margin-right: 10px">
-                        Zapomniałeś hasła?
-                    </a>
-                @endif
-
-{{--                <x-button class="ml-3">--}}
+{{--            <div class="flex items-center justify-end mt-4">--}}
+{{--                @if (Route::has('password.request'))--}}
+{{--                    <a class="underline text-sm text-gray-600 hover:text-gray-900"--}}
+{{--                       href="{{ route('password.request') }}" style="margin-right: 10px">--}}
+{{--                        Zapomniałeś hasła?--}}
+{{--                    </a>--}}
+{{--                @endif--}}
+{{--                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">--}}
 {{--                    Loguj--}}
-{{--                </x-button>--}}
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Loguj
-                    </button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+{{--                </button>--}}
+{{--            </div>--}}
+{{--        </form>--}}
+{{--    </x-auth-card>--}}
 
-<div class="w-full max-w-xs">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                Username
-            </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
+
+<!-- component -->
+    <div class="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12">
+        <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
+            <h1 class="font-bold text-center text-2xl mb-5">
+                <a href="/">
+                    <img src="{{ URL::to('/img/logo.jpg') }}" alt="no logo"
+                         style="width: 200px; display: block; margin: auto">
+                </a>
+            </h1>
+            <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="px-5 py-7">
+
+                        <!-- Session Status -->
+                        <x-auth-session-status class="mb-4" :status="session('status')"/>
+
+                        <!-- Validation Errors -->
+                        <x-auth-validation-errors class="mb-4" :errors="$errors"/>
+
+                        <label class="font-semibold text-sm text-gray-600 pb-1 block">E-mail</label>
+                        <input type="email" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" name="email"
+                               :value="old('email')" required/>
+                        <label class="font-semibold text-sm text-gray-600 pb-1 block">Hasło</label>
+                        <input type="password" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"
+                               name="password"
+                               required autocomplete="current-password"/>
+                        <button
+                            class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                            <span class="inline-block mr-2">Zaloguj</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor"
+                                 class="w-4 h-4 inline-block">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="py-5">
+                        <div class="grid grid-cols-2 gap-1">
+                            <div class="text-center sm:text-left whitespace-nowrap">
+                                @if (Route::has('password.request'))
+                                    <label for="forgot_pass" class="inline-flex items-center">
+                                        <a class="ml-6 text-sm text-gray-600"
+                                           href="{{ route('password.request') }}" style="margin-right: 10px">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                 stroke="currentColor" class="w-4 h-4 inline-block align-text-top">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                      d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/>
+                                            </svg>
+                                            Zapomniałeś hasła?
+                                        </a>
+                                    </label>
+                                @endif
+
+                            </div>
+                            <div class="text-center sm:text-right whitespace-nowrap">
+                                <label for="remember_me" class="inline-flex items-center">
+                                    <input id="remember_me" type="checkbox"
+                                           class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                           name="remember">
+                                    <span class="ml-2 mr-6 mt-1 text-sm text-gray-600">Pamiętaj mnie</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="mb-6">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-                Password
-            </label>
-            <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
-            <p class="text-red-500 text-xs italic">Please choose a password.</p>
-        </div>
-        <div class="flex items-center justify-between">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                Sign In
-            </button>
-            <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-                Forgot Password?
-            </a>
-        </div>
-    </form>
-    <p class="text-center text-gray-500 text-xs">
-        &copy;2020 Acme Corp. All rights reserved.
-    </p>
-</div>
+    </div>
+
+</x-guest-layout>
