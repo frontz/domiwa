@@ -30,7 +30,7 @@
             </div>
 
             <div>
-                <img src="{{ URL::to('/img/logo.jpg') }}" alt="no logo" style="width: 80px">
+                <img src="{{ URL::to('/img/domiwa-logo.png') }}" alt="no logo" style="width: 86px">
             </div>
 
             <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
