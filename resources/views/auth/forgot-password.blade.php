@@ -39,7 +39,7 @@
         <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
             <h1 class="font-bold text-center text-2xl mb-5">
                 <a href="/">
-                    <img src="{{ URL::to('/img/logo.jpg') }}" alt="no logo"
+                    <img src="{{ URL::to('/img/domiwa-logo.png') }}" alt="no logo"
                          style="width: 200px; display: block; margin: auto">
                 </a>
             </h1>
@@ -59,7 +59,7 @@
                             ustawienia nowego hasła.
                         </div>
                         <label class="font-semibold text-sm text-gray-600 pb-1 block">E-mail</label>
-                        <input type="email" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" type="email"
+                        <input type="email" class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-6 text-sm w-full outline-none focus:shadow-outline" type="email"
                                name="email" :value="old('email')" required autofocus>
 
                         <button
