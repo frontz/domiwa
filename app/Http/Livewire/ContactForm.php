@@ -28,8 +28,8 @@ class ContactForm extends Component
                 'comment' => $this->comment,
             ),
             function ($message) {
-                $message->from('your_email@your_domain.com');
-                $message->to('your_email@your_domain.com', 'Bobby')->subject('Your Site Contect Form');
+                $message->from('domiwa@nieruchomosci.pl');
+                $message->to('tom.frontz@gmail.com', 'DOMiwa')->subject('Wiadomość ze strony DOMiwa');
             }
         );
 

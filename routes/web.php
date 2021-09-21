@@ -71,9 +71,9 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
-Route::post('/contact', function () {
-    return view('contact');
-})->name('contact');
+//Route::post('/contact', function () {
+//    return view('contact');
+//})->name('contact');
 
 Route::get('/report', function () {
     return view('report');

@@ -1,13 +1,15 @@
 <div>
-    <section class="relative py-6 bg-white bg-blue-50 min-w-screen animation-fade animation-delay">
-        <div class="container h-full max-w-5xl mx-auto overflow-hidden rounded-lg shadow">
+    <section class="relative py-6 bg-white min-w-screen animation-fade animation-delay">
+        <div class="container h-full max-w-5xl mx-auto overflow-hidden">
             @if ($success)
-                <div class="inline-flex w-full ml-3 overflow-hidden bg-white rounded-lg shadow-sm">
-                    <div class="flex items-center justify-center w-12 bg-green-500">
-                    </div>
-                    <div class="px-3 py-2 text-left">
-                        <span class="font-semibold text-green-500">Sukces!</span>
-                        <p class="mb-1 text-sm leading-none text-gray-500">{{ $success }}</p>
+                <div class="flex items-center justify-center p-2 w-full bg-white rounded-lg">
+                    <div class="inline-flex w-full overflow-hidden bg-white rounded-lg shadow-md">
+                        <div class="flex items-center justify-center w-12 bg-green-500">
+                        </div>
+                        <div class="px-3 py-2 text-left">
+                            <p class="mb-1 text-sm leading-none text-gray-500">{{ $success }}</p>
+                            <p class="mb-1 text-sm leading-none text-gray-500">Dziękujemy za wiadomość, odpowiemy jak najszybciej!</p>
+                        </div>
                     </div>
                 </div>
             @endif
@@ -19,19 +21,25 @@
                             @error('email')
                             <p class="text-red-500 mt-1 text-sm">{{ $message }}</p>
                             @enderror
-                            <input wire:model="email" class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline" type="text" placeholder="Email" name="email" value="{{ old('email') }}" />
+                            <input wire:model="email"
+                                   class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                   type="text" placeholder="Email" name="email" value="{{ old('email') }}"/>
                         </div>
                         <div class="py-3">
                             @error('name')
                             <p class="text-red-500 mt-1 text-sm">{{ $message }}</p>
                             @enderror
-                            <input wire:model="name" class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline" type="text" placeholder="Imię" name="name" value="{{ old('name') }}" />
+                            <input wire:model="name"
+                                   class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                   type="text" placeholder="Imię" name="name" value="{{ old('name') }}"/>
                         </div>
                         <div class="py-3">
                             @error('comment')
                             <p class="text-red-500 mt-1 text-sm">{{ $message }}</p>
                             @enderror
-                            <textarea wire:model="comment" row="4" class="border rounded-lg h-40 px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline" name="comment" placeholder="Twoja wiadomość...">{{ old('comment') }}</textarea>
+                            <textarea wire:model="comment" row="4"
+                                      class="border rounded-lg h-40 px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                      name="comment" placeholder="Twoja wiadomość...">{{ old('comment') }}</textarea>
                         </div>
                         <div class="pt-3">
                             <button

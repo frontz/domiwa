@@ -12,7 +12,7 @@
                     <div class="p-10 bg-orange-200">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <h3 style="font-size: large; margin-bottom: 30px">DOMiwa Nieruchomości Mazowieckie</h3>
+                                <h3 class="text-center" style="font-size: large; margin-bottom: 30px">DOMiwa Nieruchomości Mazowieckie</h3>
                                 <ul class="">
                                     <li id="navi-2" class="leading-7 text-sm font-medium">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" style="display: inline-block">
@@ -55,7 +55,7 @@
                                 </ul>
                             </div>
                             <div>
-                                <h3 style="font-size: large; margin-bottom: 30px">Napisz do nas, odpowiemy jak najszybciej</h3>
+                                <h3 class="text-center" style="font-size: large; margin-bottom: 30px">Jeśli chcesz zadać pytanie, napisz do nas!</h3>
                                 @livewire('contact-form')
                                 @livewireScripts
                             </div>
