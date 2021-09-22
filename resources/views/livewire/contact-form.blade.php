@@ -1,18 +1,6 @@
 <div>
-    <section class="relative py-6 bg-white min-w-screen animation-fade animation-delay">
+    <section class="relative bg-white min-w-screen animation-fade animation-delay">
         <div class="container h-full max-w-5xl mx-auto overflow-hidden">
-            @if ($success)
-                <div class="flex items-center justify-center p-2 w-full bg-white rounded-lg">
-                    <div class="inline-flex w-full overflow-hidden bg-white rounded-lg shadow-md">
-                        <div class="flex items-center justify-center w-12 bg-green-500">
-                        </div>
-                        <div class="px-3 py-2 text-left">
-                            <p class="mb-1 text-sm leading-none text-gray-500">{{ $success }}</p>
-                            <p class="mb-1 text-sm leading-none text-gray-500">Dziękujemy za wiadomość, odpowiemy jak najszybciej!</p>
-                        </div>
-                    </div>
-                </div>
-            @endif
             <div class="h-full sm:flex">
                 <div class="flex items-center justify-center w-full p-10 bg-white">
                     <form wire:submit.prevent="contactFormSubmit" action="/contact" method="POST" class="w-full">
@@ -56,6 +44,19 @@
                     </form>
                 </div>
             </div>
+            @if ($success)
+                <div class="flex items-center justify-center px-10">
+                    <div class="inline-flex w-full overflow-hidden bg-gray-50 rounded-lg shadow-md">
+                        <div class="flex items-center justify-center w-12 bg-green-500">
+                        </div>
+                        <div class="px-3 py-2 text-left">
+                            <p class="mb-1 text-sm leading-none text-gray-500">{{ $success }}</p>
+                            <p class="mb-1 text-sm leading-none text-gray-500">Dziękujemy za wiadomość, odpowiemy jak
+                                najszybciej!</p>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
     </section>
 </div>

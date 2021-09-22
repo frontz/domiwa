@@ -33,7 +33,7 @@ class ContactForm extends Component
             }
         );
 
-        $this->success = 'Dziękujemy za Twoją wiadomość!';
+        $this->success = 'Sukces!';
 
         $this->clearFields();
     }
