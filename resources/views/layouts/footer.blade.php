@@ -55,7 +55,7 @@
 		                            c0-7.984,2.208-13.425,13.67-13.425l14.595-0.006V1.08C115.325,0.752,106.661,0,96.577,0C75.52,0,61.104,12.853,61.104,36.452
                                     v20.341H37.29v27.585h23.814v70.761H89.584z"/>
                         </svg>
-                        <a href="#" class="text-gray-300 hover:text-white text-small underline">
+                        <a href="https://www.facebook.com/sprzedazmazowieckiedomydzialkimieszkaniaagent" target="_blank" class="text-gray-300 hover:text-white text-small underline">
                             Sprawdź nas na FB
                         </a>
                     </li>

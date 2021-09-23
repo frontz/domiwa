@@ -10,11 +10,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    {{--                    Tutaj p-10 - ustawiłem margines od krawędzi karty--}}
                     <div class="p-10 bg-orange-200">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <h3 class="text-center" style="font-size: large; margin-bottom: 30px">DOMiwa
+                                <h3 class="text-center text-lg mb-8">DOMiwa
                                     Nieruchomości Mazowieckie</h3>
                                 <ul class="">
                                     <li id="navi-2" class="leading-7 text-sm font-medium">
@@ -73,7 +72,7 @@
                                 </ul>
                             </div>
                             <div>
-                                <h3 class="text-center" style="font-size: large;">Jeśli chcesz zadać
+                                <h3 class="text-center text-lg">Jeśli chcesz zadać
                                     pytanie, napisz do nas!</h3>
                                 @livewire('contact-form')
                                 @livewireScripts

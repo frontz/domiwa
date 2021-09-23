@@ -21,7 +21,7 @@ class ContactForm extends Component
     {
         $contact = $this->validate();
 
-        Mail::send('email',
+        Mail::send('mailing.email',
             array(
                 'name' => $this->name,
                 'email' => $this->email,
