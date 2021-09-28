@@ -13,7 +13,7 @@
                                    class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                    type="text" placeholder="Tytuł ogłoszenia" name="title" value="{{ old('title') }}"/>
                         </div>
-                        <div class="pb-3">
+                        <div class="py-3">
                             @error('email')
                             <p class="text-red-500 mt-1 text-sm">{{ $message }}</p>
                             @enderror

@@ -70,6 +70,15 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/download', function () {
+    return view('test.download');
+})->name('download');
+
+
+//Route::post('/getfile', function () {
+//    return view('getfile');
+//})->name('getfile');
+
 
 //Route::post('/contact', function () {
 //    return view('contact');
