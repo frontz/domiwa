@@ -6,14 +6,14 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Livewire\Component;
 
-class DownloadFile extends Component
+class DownloadXmlFile extends Component
 {
 
-    public function downloadFile()
+    public function downloadXmlFile()
     {
 
-        $local_file = "test.txt";
-        $server_file = "test.txt";
+        $local_file = "download_xml/oferty.xml";
+        $server_file = "przykladowy_xml.xml";
         $ftp_server = "server649883.nazwa.pl";
         $ftp_user_name = "server649883";
         $ftp_user_pass = "Tentego77";

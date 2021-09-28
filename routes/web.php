@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ReadXmlController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\DownloadXmlFile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +26,9 @@ Route::get('/home', function () {
 
 Route::get('users/list',
     [UserController::class, 'index'])
-->middleware(['auth'])->name('admins');
+    ->middleware(['auth'])->name('admins');
 
-Route::get('offers/list', function() {
+Route::get('offers/list', function () {
     return view('admins.offers');
 })->middleware(['auth'])->name('offers');
 
@@ -39,7 +41,7 @@ Route::get('/aftermarket', function () {
 })->name('aftermarket');
 
 Route::get('offers/list', function () {
-        return view('admins.offers');
+    return view('admins.offers');
 })->name('offers');
 
 Route::get('/design', function () {
@@ -70,22 +72,12 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/download', function () {
-    return view('test.download');
-})->name('download');
-
-
-//Route::post('/getfile', function () {
-//    return view('getfile');
-//})->name('getfile');
-
-
-//Route::post('/contact', function () {
-//    return view('contact');
-//})->name('contact');
-
 Route::get('/report', function () {
     return view('report');
 })->name('report');
 
-require __DIR__.'/auth.php';
+Route::get('/downloadxml', [DownloadXmlFile::class, 'downloadXmlFile'])->name('downloadxml');
+
+Route::get('/readxml', [ReadXmlController::class, 'index'])->name('readxml');
+
+require __DIR__ . '/auth.php';

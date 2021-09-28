@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plik>
+<informacje>Plik wygenerowany przez program Eksport 2001 firmy Melog.com www.melog.com</informacje>
+<agencja>Agencja</agencja>
+<data>2002-10-25 14:19:56</data>
+<wersja>0.3</wersja>
+<cel>domy.pl</cel>
+<zawartosc_pliku>calosc</zawartosc_pliku>
+<lista_ofert>
+<dzial tab="mieszkania" typ="sprzedaz">
+<oferta>
+<id>1</id>
+<param nazwa="wojewodztwo" typ="text">mazowieckie</param>
+<param nazwa="miasto" typ="text">Grodzisk Maz.</param>
+<param nazwa="dzielnica" typ="text">Os. Kopernika</param>
+<param nazwa="okolica" typ="text">nowe osiedle</param>
+<param nazwa="ulica" typ="text">Bairda</param>
+<param nazwa="dataaktualizacji" typ="text">2014-06-30 12:23:01</param>
+<param nazwa="powierzchnia" typ="text">58.0000</param> 
+<param nazwa="liczbapokoi" typ="int">2</param>
+<param nazwa="liczbatelefonow" typ="int">2</param>
+<param nazwa="pietro" typ="int">2</param>
+<param nazwa="liczbapieter" typ="int">5</param>
+<param nazwa="winda" typ="int">1</param>
+<param nazwa="rokbudowy" typ="int">1960</param>
+<param nazwa="materialbudowy" typ="text">cegła</param>
+<param nazwa="typkuchni" typ="text">widna</param>
+<param nazwa="miejscaparkingowe" typ="text">parking naziemny</param>
+<param nazwa="opis" typ="text">opis</param>
+<param nazwa="biuro" typ="int">0</param>
+<param nazwa="meble" typ="int">1</param>
+<param nazwa="agent_nazwisko" typ="text">Kowalski</param>
+<param nazwa="agent_email" typ="text">email</param>
+<param nazwa="agent_tel_biuro" typ="text">tel</param>
+<param nazwa="agent_tel_kom" typ="text">tel</param>
+<param nazwa="numer_licencji_posrednika" type="int">122</param>
+<param nazwa="garaz" typ="int">1</param>
+<param nazwa="napoddaszu" typ="int">1</param>
+<param nazwa="dwupoziomowe" typ="int">1</param>
+<param nazwa="balkon" typ="int">1</param>
+<param nazwa="taras" typ="int">0</param>
+<param nazwa="piwnica" typ="int">0</param>
+<param nazwa="piecykgazowy" typ="int">0</param>
+<param nazwa="pralka" typ="int">0</param>
+<param nazwa="lodowka" typ="int">0</param>
+<param nazwa="kuchniawyposazona" typ="int">0</param>
+<param nazwa="telewizor" typ="int">0</param>
+<param nazwa="internet" typ="int">0</param>
+<param nazwa="osiedlezamkniete" typ="int">0</param>
+<param nazwa="wylacznosc" typ="int">0</param>
+<param nazwa="bezprowizji" typ="int">0</param>
+<cena waluta="PLN">289000.0000</cena>  
+</oferta>
+<oferta>
+<id>2</id>                                                                                                                                                                                                              
+<location>                                                                                                                                                                                                                           
+<area level="1">Polska</area>                                                                                                                                                                                                    
+<area level="2">Lubuskie</area>                                                                                                                                                                                              
+<area level="5">Gorzów Wielkopolski</area>                                                                                                                                                                                
+</location>
+<param nazwa="dataaktualizacji" typ="text">2014-07-30 09:03:30.0552</param>                                                                                                                                                          
+<param nazwa="status" typ="text">AKTUALNA</param>                                                                                                                                                                                    
+<cena waluta="PLN">289000.0000</cena>                                                                                                                                                                                                
+<param nazwa="powierzchnia" typ="text">58.0000</param> 
+<param nazwa="pietro" typ="int">4</param>                                                                                                                                                                                            
+<param nazwa="liczbapieter" typ="int">4</param>                                                                                                                                                                                      
+<param nazwa="rokbudowy" typ="int"/>                                                                                                                                                                                                 
+<param nazwa="liczbapokoi" typ="int">3</param>                                                                                                                                                                                       
+<param nazwa="liczbapomieszczen" typ="int"/>                                                                                                                                                                                         
+<param nazwa="ogrzewanie" typ="text">C.O. Z SIECI MIEJSKIEJ</param>                                                                                                                                                                  
+<param nazwa="forma_wlasnosci" typ="text">SPÓŁDZIELCZE WłASNOŚCIOWE Z KW</param>                                                                                                                                                      
+<param nazwa="ulica" typ="text">Kaliska</param>                                                                                                                                                                                      
+<param nazwa="agent_nazwisko" typ="text">Kowalski</param>                                                                                                                                                                       
+<param nazwa="agent_tel_biuro" typ="text">tel</param>                                                                                                                                                                        
+<param nazwa="agent_email" typ="text">email</param>                                                                                                                                                        
+<param nazwa="numer_licencji_posrednika" typ="text">17672</param>                                                                                                                                                                    
+<param nazwa="typkuchni" typ="text">Z OKNEM</param>                                                                                                                                                                                  
+<param nazwa="typbudynkumieszk" typ="text">NISKI BLOK</param>                                                                                                                                                                        
+<param nazwa="balkon" typ="bool">1</param>                                                                                                                                                                                        
+<param nazwa="piwnica" typ="bool">1</param>                                                                                                                                                                                       
+<param nazwa="miejscaparkingowe" typ="text">1</param>                                                                                                                                                                                
+<param nazwa="stannieruchomosci" typ="text">WYSOKI STANDARD</param>                                                                                                                                                                  
+<param nazwa="typpodlaczeniawody" typ="text">GAZOWY PRZEPŁYWOWY</param>                                                                                                                                                              
+<param nazwa="opis" typ="text">opis oferty</param>                                                                   
+</oferta>
+<oferta>
+<id>3</id>
+<location>                                                                                                                                                                                                                                   
+<area type="wojewodztwo" level="1">MAŁOPOLSKIE</area>
+<area type="powiat" level="2">tarnowski</area>
+<area type="gmina" level="3">Tarnów</area>
+<area type="miejscowosc" level="4">Błonie</area>
+</location> 
+<cena waluta="PLN">3850000,0000</cena>                                                                                                                                                                                               
+<param nazwa="n_geo_y" typ="text">52.093871700000000</param>                                                                                                                                                                         
+<param nazwa="n_geo_x" typ="text">21.117722000000000</param>                                                                                                                                                                         
+<param nazwa="wylacznosc" typ="bool">0</param>                                                                                                                                                                                   
+<param nazwa="bezprowizji" typ="bool">0</param>                                                                                                                                                                                  
+<param nazwa="dataaktualizacji" typ="text">2014-07-30 09:55:44</param>                                                                                                                                                               
+<param nazwa="forma_wlasnosci" typ="text">włanościowe</param>                                                                                                                                                                           
+<param nazwa="ma_ogrzewanie" typ="bool">1</param>                                                                                                                                                                                 
+<param nazwa="liczba_miejsc_parkingowych" typ="int">2</param>                                                                                                                                                                        
+<param nazwa="ma_wode" typ="bool">1</param>                                                                                                                                                                                       
+<param nazwa="ma_kanalizacje" typ="bool">1</param>                                                                                                                                                                                
+<param nazwa="liczba_sypialni" typ="int">3</param>                                                                                                                                                                                   
+<param nazwa="prad" typ="bool">1</param>                                                                                                                                                                                          
+<param nazwa="powierzchnia" typ="real">600</param>                                                                                                                                                                                   
+<param nazwa="powierzchniadzialki" typ="real">2190</param>                                                                                                                                                                           
+<param nazwa="liczbapokoi" typ="int">7</param>                                                                                                                                                                                       
+<param nazwa="liczbapieter" typ="int">3</param>  
+<param nazwa="rokbudowy" typ="int">1975</param>                                                                                                                                                                                      
+<param nazwa="materialbudowy" typ="text">płyta</param>                                                                                                                                                                               
+<param nazwa="meble" typ="bool">1</param>
+<param nazwa="taras_powierzchnia" typ="real">9</param>
+<param nazwa="loggia_powierzchnia" typ="real">4</param>
+<param nazwa="ogrodek_powierzchnia" typ="real">5</param>
+<param nazwa="powierzchnia_balkonu" typ="real">7</param>
+<param nazwa="wysokoscpomieszczen" typ="float">260</param>
+<param nazwa="rynek_pierwotny" typ="bool">1</param>
+<param nazwa="liczbatelefonow" typ="int">1</param>
+<param nazwa="winda" typ="int">0</param>
+<param nazwa="typkuchni" typ="text">widna</param>
+<param nazwa="miejscaparkingowe" typ="text">parking naziemny</param>
+<param nazwa="biuro" typ="bool">0</param>
+<param nazwa="garaz" typ="bool">0</param>
+<param nazwa="zwalnianeod" typ="text">od zaraz</param>
+<param nazwa="napoddaszu" typ="bool">1</param>
+<param nazwa="dwupoziomowe" typ="bool">0</param>
+<param nazwa="balkon" typ="bool">1</param>
+<param nazwa="taras" typ="bool">1</param>
+<param nazwa="piwnica" typ="bool">0</param>
+<param nazwa="piecykgazowy" typ="bool">1</param>
+<param nazwa="pralka" typ="bool">1</param>
+<param nazwa="lodowka" typ="bool">0</param>
+<param nazwa="kuchniawyposazona" typ="bool">0</param>
+<param nazwa="telewizor" typ="bool">1</param>
+<param nazwa="internet" typ="bool">0</param>
+<param nazwa="osiedlezamkniete" typ="bool">0</param>
+<param nazwa="wylacznosc" typ="int">1</param>
+<param nazwa="bezprowizji" typ="bool">0</param>
+<param nazwa="zamiana" typ="bool">0</param>
+<param nazwa="lazienka_wc" typ="bool">1</param>
+<param nazwa="klimatyzacja" typ="bool">0</param>
+<param nazwa="czy_stan_deweloperski" typ="bool">0</param>
+<param nazwa="liczba_poziomow" typ="int">2</param>
+<param nazwa="liczbalazienek" typ="int">1</param>
+<param nazwa="liczba_sypialni" typ="int">1</param>
+<param nazwa="liczba_wind" typ="int">0</param>
+<param nazwa="ma_kominek" typ="bool">1</param>
+<param nazwa="ma_gaz" typ="bool">1</param>
+<param nazwa="ma_domofon" typ="bool">1</param>
+<param nazwa="ma_telefon" typ="bool">1</param>
+<param nazwa="ma_ogrzewanie" typ="bool">1</param>
+<param nazwa="gaz" typ="text">miejski</param>
+<param nazwa="rodzajlacz" typ="text">stałe</param>
+<param nazwa="stannieruchomosci" typ="text">wysoki standard</param>
+<param nazwa="stanbudynku" typ="text">po remoncie</param>
+<param nazwa="ogrzewanie" typ="text">C.O. GAZOWE</param>
+<param nazwa="kaucja" typ="text">dwumiesięczna</param>
+<param nazwa="typ_podlogi" typ="text">dwumiesięczna</param>
+<param nazwa="stolarka_okienna" typ="text">oryginalne drewniane</param>
+<param nazwa="dodatkowe_koszty" typ="text">zuzycie wody i prądu</param>
+<param nazwa="ma_rampe" typ="bool">1</param>
+<param nazwa="ma_pom_socjalne" typ="bool">0</param>
+<param nazwa="has_suites" typ="int">0</param>
+<param nazwa="czy_cena_do_negocjacji" typ="bool">0</param>
+<param nazwa="przyjazne_zwierzetom" typ="bool">0</param>
+<param nazwa="typbudynkumieszk" typ="text">w bloku</param>
+<param nazwa="opis" typ="text">opis oferty</param>
+</oferta>
+</dzial>
+<dzial tab="mieszkania" typ="wynajem">
+<oferta>
+<id>1</id>                                                                                                                                                                                                                                 
+<location>                                                                                                                                                                                                                                 
+<area level="1">POLSKA</area> 
+<area level="2">DOLNOŚLĄSKIE</area>                                                                                                                                                                                       
+<area level="3">wrocławski</area>                                                                                                                                                                                              
+<area level="4">Sobótka</area>                                                                                                                                                                                                  
+<area level="5">Sulistrowiczki</area>                                                                                                                                                                                     
+</location>                                                                                                                                                                                                
+<cena kod="PLN">1500.00</cena>
+<param nazwa="powierzchnia" typ="real">68.00</param>
+<param nazwa="liczbapokoi" typ="int">3</param> 
+<param nazwa="opis" typ="text">opis oferty</param>
+<param nazwa="materialbudowy" typ="text">cegła</param>
+<param nazwa="pietro" typ="int">0</param>
+<param nazwa="typbudynkumieszk" typ="text">dom</param>
+<param nazwa="typkuchni" typ="text">z wyposażeniem</param>
+<param nazwa="ulica" typ="text">Zgoda</param>                                                                                                                                                                                               
+<param nazwa="zwalnianeod" typ="text">od zaraz </param>
+<param nazwa="powierzchniamieszkalna" typ="real">64.0</param>
+<param nazwa="ogrzewanie" typ="text">centralne ogrzewanie</param> 
+<param nazwa="ma_ogrzewanie" typ="bool">1</param>                                                                                                                                                                                         
+<param nazwa="stanbudynku" typ="text">bardzo dobry</param>  
+<param nazwa="czas_wynajmu" typ="text">do uzgodnienia</param>        
+</oferta>
+</dzial>
+<dzial tab="domy" typ="sprzedaz">
+<oferta>
+<id>1</id>                                                                                                                                                                                                                                  
+<location>                                                                                                                                                                                                                                   
+<area level="1">Polska</area>
+<area level="2">kujawsko-pomorskie</area>
+<area level="3">aleksandrowski</area>                                                                                                                                                                                                 
+<area level="4">Ciechocinek</area>                                                                                                                                                                                                  
+</location>                                                                                                                                                                                                
+<param nazwa="dataaktualizacji" typ="text">2014-07-30 12:19:37.0910</param>                                                                                                                                                          
+<param nazwa="status" typ="text">AKTUALNA</param>                                                                                                                                                                                    
+<cena waluta="PLN">339000.0000</cena>                                                                                                                                                                                                
+<param nazwa="typzabudowy" typ="text">WOLNO STOJĄCY</param>                                                                                                                                                                          
+<param nazwa="powierzchnia" typ="text">168.0000</param>                                                                                                                                                                              
+<param nazwa="liczbapieter" typ="int">2</param>                                                                                                                                                                                      
+<param nazwa="rokbudowy" typ="int">2006</param>                                                                                                                                                                                      
+<param nazwa="liczbapokoi" typ="int">6</param>                                                                                                                                                                                       
+<param nazwa="liczbapomieszczen" typ="int">3</param>
+<param nazwa="ogrzewanie" typ="text">C.O. GAZOWE</param>                                                                                                                                                                             
+<param nazwa="forma_wlasnosci" typ="text">WŁASNOŚCIOWE</param>                                                                                                                                                                           
+<param nazwa="agent_nazwisko" typ="text">Jan Kowalski</param>                                                                                                                                                                       
+<param nazwa="agent_tel_biuro" typ="text">tel</param>                                                                                                                                                                          
+<param nazwa="agent_email" typ="text">email</param>                                                                                                                                                          
+<param nazwa="numer_licencji_posrednika" typ="text">11383</param>                                                                                                                                                                    
+<param nazwa="wylacznosc" typ="bool">1</param>                                                                                                                                                                                    
+<param nazwa="drogadojazdowa" typ="text">ASFALTOWA</param>                                                                                                                                                                           
+<param nazwa="liczbalazienek" typ="text">2.0000</param>                                                                                                                                                                              
+<param nazwa="ma_ogrzewanie" typ="bool">1</param>                                                                                                                                                                                 
+<param nazwa="balkon" typ="bool">1</param>                                                                                                                                                                                        
+<param nazwa="garaz" typ="bool">1</param>                                                                                                                                                                                         
+<param nazwa="stanbudynku" typ="text">ŚREDNI</param>                   
+<param nazwa="typpodlaczeniawody" typ="text">GAZOWY PRZEPŁYWOWY</param>                                                                                                                                                              
+<param nazwa="opis" typ="text">opis oferty</param>
+<param nazwa="urzadzonyogrod" typ="bool">0</param>
+<param nazwa="prad" typ="bool">1</param>
+<param nazwa="sila" typ="bool">0</param>
+<param nazwa="kanalizacja" typ="text">miejska/gminna</param> 
+<param nazwa="typdachu" typ="text">dachówka ceramiczna</param> 
+</oferta>
+</dzial>
+<dzial tab="domy" typ="wynajem">
+<oferta>
+<id>1</id>                                                                                                                                                                                                                                 
+<location>                                                                                                                                                                                                                                   
+<area level="1">POLSKA</area>
+<area level="2">LUBUSKIE</area>                                                                                                                                                                                           
+<area level="3">słubicki</area>                                                                                                                                                                                                
+<area level="4">Słubice</area>                                                                                                                                                                                                  
+</location>                                                                                                                                                                                                
+<param nazwa="powierzchnia" typ="real">35</param>
+<param nazwa="liczbapokoi" typ="int">1</param>
+<param nazwa="liczbatelefonow" typ="int">1</param>
+<param nazwa="pietro" typ="int">0</param>
+<param nazwa="liczbapieter" typ="int">3</param>
+<param nazwa="winda" typ="int">0</param>
+<param nazwa="rokbudowy" typ="int">19992</param>
+<param nazwa="materialbudowy" typ="text">cegła</param>
+<param nazwa="typkuchni" typ="text">otwarta</param>
+<param nazwa="miejscaparkingowe" typ="text">dla osobowych</param>
+<param nazwa="opis" typ="text"></param>
+<cena waluta="PLN">2900.00</cena>
+<param nazwa="stolarka_okienna" typ="text">oryginalne drewniane</param>
+<param nazwa="dodatkowe_koszty" typ="text">zuzycie wody i prądu</param>
+<param nazwa="czas_wynajmu" typ="text">do uzgodnienia</param>   
+<param nazwa="materialbudowy" typ="text">CEGŁA</param> 
+<param nazwa="powierzchniadzialki" typ="real">764</param>
+</oferta>
+</dzial>
+<dzial tab="lokale" typ="sprzedaz">
+<oferta>
+<id>DMG-LS-5886</id>
+<param nazwa="wojewodztwo" typ="text">ŚlĄSKIE</param>
+<param nazwa="miasto" typ="text">Tarnowskie Góry</param>
+<location>
+<area level="1">Polska</area>
+<area level="2">ŚLĄSKIE</area>
+<area level="3">tarnogórski</area>
+<area level="4">Tarnowskie Góry</area>
+</location>                                                                                                                                                                                               
+<param nazwa="forma_wlasnosci" typ="text">WŁASNOŚĆ</param>
+<param nazwa="dataaktualizacji" typ="date">2012-11-08 09:39:29</param>
+<param nazwa="n_geo_x" typ="real">15.2369</param>
+<param nazwa="n_geo_y" typ="real">52.7325</param>
+<param nazwa="rynek" typ="text">wtorny</param>
+<param nazwa="powierzchnia" typ="real">76</param>
+<param nazwa="liczbatelefonow" typ="int">1</param>
+<param nazwa="rokbudowy" typ="int">2010</param>
+<cena waluta="PLN">1000000,00</cena>
+<param nazwa="typlokalu" typ="text">handlowo-usługowy</param>
+<param nazwa="przeznaczenie" typ="text">handlowo-usługowy</param>
+<param nazwa="klimatyzacja" typ="int">-1</param>
+<param nazwa="zabezpieczenia" typ="text">alarm</param>
+<param nazwa="wylacznosc" typ="bool">0</param>
+<param nazwa="bezprowizji" typ="bool">0</param>
+<param nazwa="stannieruchomosci" typ="text">Do wprowadzenia</param>            
+<param nazwa="biuro" typ="int">0</param>
+<param nazwa="ma_witryne" typ="int">1</param>
+<param nazwa="typpodlaczeniawody" typ="text">GAZOWY PRZEPŁYWOWY</param>  
+<param nazwa="wysokoscpomieszczen" typ="float">260</param>
+<param nazwa="ma_domofon" typ="bool">1</param>
+<param nazwa="typ_biura" typ="text">lokal usługowy</param> 
+<param nazwa="total_area" typ="real">76</param>
+<param nazwa="opis" typ="text">opis oferty</param>
+</oferta>
+</dzial>
+<dzial tab="lokale" typ="sprzedaz">
+<oferta>
+<id>oferta_garaz</id> <location>                                                                                                                                                                                                                                   
+<area type="wojewodztwo" level="1">DOLNOŚLĄSKIE</area>
+<area type="powiat" level="2">Wrocław</area>
+<area type="gmina" level="3">Wrocław</area>
+<area type="miejscowosc" level="4">Wrocław</area>
+<area type="dzielnica" level="5">Fabryczna</area>
+</location>
+<param nazwa="datawprowadzenia" typ="date">2014-07-23 13:48:05</param>
+<param nazwa="miejscaparkingowe" typ="text">dla osobowych</param>
+<param nazwa="typlokalu" typ="text">garaż</param>
+<param nazwa="opis" typ="text">garaż na wynajem</param>
+<cena waluta="PLN">500.00</cena>
+<param nazwa="powierzchnia" typ="real">70</param>
+<param nazwa="total_area" typ="real">70</param>
+<param nazwa="agent_nazwisko" typ="text">Jan Kowalski</param>                                                                                                                                                                       
+<param nazwa="agent_tel_kom" typ="text">tel</param>                                                                                                                                                                                  
+<param nazwa="agent_tel_biuro" typ="text">tel</param>                                                                                                                                                                              
+<param nazwa="agent_email" typ="text">adres_email</param>                                                                                                                                                                 
+<param nazwa="agent_licencja" typ="text">7134</param> 
+<param nazwa="ogrodzenie" typ="text">TAK</param> 
+</oferta>
+</dzial>
+<dzial tab="lokale" typ="sprzedaz">
+<oferta>
+<id>lokal_komercyjny</id> <location>                                                                                                                                                                                                                                   
+<area level="1">POLSKA</area>
+<area level="2">LUBUSKIE</area>                                                                                                                                                                                           
+<area level="3">słubicki</area>                                                                                                                                                                                                
+<area level="4">Słubice</area>                                                                                                                                                                                                  
+</location>                                                                                                                                                                                            
+<param nazwa="datawprowadzenia" typ="date">2013-10-07 15:15:14</param>
+<param nazwa="liczbapieter" typ="int">1</param>
+<param nazwa="liczbapomieszczen" typ="int">0</param>   
+<param nazwa="opis" typ="text">opis</param>
+<param nazwa="pietro" typ="int">1</param>
+<param nazwa="powierzchnia" typ="real">147.3</param> 
+<param nazwa="typlokalu" typ="text">usługowy</param>                                                                                                                                                                   
+<param nazwa="dataaktualizacji" typ="date">2014-04-25 08:28:53</param> 
+<param nazwa="n_geo_x" typ="real">22.2512</param>
+<param nazwa="n_geo_y" typ="real">52.1624</param> 
+<param nazwa="bezprowizji" typ="bool">1</param> 
+<cena waluta="PLN">2550000.00</cena>
+</oferta>
+<oferta>
+<id>lokal_2</id> <location>                                                                                                                                                                                                                                   
+<area level="1">POLSKA</area>
+<area level="2">LUBUSKIE</area>                                                                                                                                                                                           
+<area level="3">słubicki</area>                                                                                                                                                                                                
+<area level="4">Słubice</area>                                                                                                                                                                                                  
+</location>                                                                                                                                                                                            
+<cena waluta="PLN">2550000.00</cena>
+<param nazwa="gaz" typ="text">tak - miejski</param>
+<param nazwa="miejscaparkingowe" typ="text">Własny parking Tak</param>
+<param nazwa="typlokalu" typ="text">kamienica</param>
+<param nazwa="typpodlaczeniawody" typ="text">tak - miejska</param>                                                                                                                                                                    
+<param nazwa="ogrzewanie" typ="text">własne gazowe</param> 
+<param nazwa="opis" typ="text">opis oferty</param>
+<param nazwa="powierzchnia" typ="real">935</param>
+<param nazwa="typlokalu" typ="text">kamienica</param>
+<param nazwa="typpodlaczeniawody" typ="text">tak - miejska</param>
+<param nazwa="total_area" typ="real">935</param>
+<param nazwa="ogrodzenie" typ="text">NIE</param> 
+<param nazwa="wylacznosc" typ="bool">0</param>
+</oferta>
+</dzial>
+<dzial tab="dzialki" typ="sprzedaz">
+<oferta>
+<id>dzialki_komercyjne</id> <location>                                                                                                                                                                                                                                   
+<area level="1">POLSKA</area>
+<area level="2">LUBUSKIE</area>                                                                                                                                                                                           
+<area level="3">słubicki</area>                                                                                                                                                                                                
+<area level="4">Słubice</area>                                                                                                                                                                                                  
+</location>                                                                                                                                                                                            
+<param nazwa="typdzialki" typ="text">budowlane-wielorodzinne</param>
+<cena waluta="PLN">750000.00</cena>
+<param nazwa="powierzchnia" typ="real">2401</param>
+<param nazwa="powierzchniadzialki" typ="real">2401</param>
+<param nazwa="szerokoscdzialki" typ="real">45</param>
+<param nazwa="dlugoscdzialki" typ="real">54</param>
+<param nazwa="ogrodzenie" typ="text">JEST</param>
+<param nazwa="drogadojazdowa" typ="text">KOSTKA BRUKOWA</param>
+<param nazwa="opis" typ="text">opis oferty</param>
+</oferta>
+<oferta>
+<id>dzialki_2</id> <location>                                                                                                                                                                                                                                   
+<area level="1">Polska</area>
+<area level="2">pomorskie</area>
+<area level="3">Gdańsk</area>
+<area level="4">Chełm</area>                                                                                                                                                                                                   
+</location>                                                                                                                                                                                            
+<cena waluta="PLN">145000.00</cena>
+<param nazwa="powierzchnia" typ="real">3236</param>
+<param nazwa="powierzchniadzialki" typ="real">3236</param>
+<param nazwa="typdzialki" typ="text">rekreacyjno-budowlana</param>
+<param nazwa="wylacznosc" typ="bool">1</param>
+<param nazwa="forma_wlasnosci" typ="text">Własność</param> 
+</oferta>
+</dzial>
+</lista_ofert>
+</plik>
