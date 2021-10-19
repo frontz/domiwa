@@ -25,8 +25,8 @@
                                         <select name="market_type"
                                                 class="border rounded-lg px-3 bg-gray-100 border border-gray-400 py-2 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                             <option value="#">Wybierz rynek</option>
-                                            <option value="primary" default>Pierwotny</option>
-                                            <option value="secondary" id="secondary">Wtórny</option>
+                                            <option value="primary">Pierwotny</option>
+                                            <option value="secondary">Wtórny</option>
                                         </select>
 
                                     </div>
@@ -39,6 +39,7 @@
                                             <option value="#">Typ transakcji</option>
                                             <option value="sale">Sprzedaż</option>
                                             <option value="rent">Wynajem</option>
+                                            <option value="lease">Dzierżawa</option>
                                         </select>
                                     </div>
                                 </div>
@@ -58,7 +59,7 @@
                                 <div class="flex-1 pt-6">
 
                                     <div
-                                        class="relative bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 float-left rounded-full">
+                                        class="w-full relative bg-blue-500 hover:bg-blue-700 text-white text-center font-semibold py-2 px-4 float-left rounded-lg">
                                         <button type="submit">Załaduj formularz</button>
                                     </div>
                                 </div>

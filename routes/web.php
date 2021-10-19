@@ -75,6 +75,9 @@ Route::get('/report', function () {
     return view('report');
 })->name('report');
 
+Route::get('/get-form', function () {
+    return view('components.forms.get-offer-form');
+})->name('offers-management');
 Route::post('/get-form', [GetOfferForm::class, 'getForm']);
 
 Route::get('/houses', [HouseController::class, 'index'])->name('houses.index')->middleware('auth');

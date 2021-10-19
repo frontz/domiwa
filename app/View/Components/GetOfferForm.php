@@ -18,7 +18,33 @@ class GetOfferForm extends Component
     }
 
     public function getForm(Request $request) {
-        dump($request->input('market_type'));
+        $market_type = $request->input('market_type');
+        $transaction_type = $request->input('transaction_type');
+        $property_type = $request->input('property_type');
+
+        if ($market_type == 'primary' && $transaction_type == 'sale' && $property_type == 'house') {
+            return view('components.forms.primary-house-form');
+        } elseif ($market_type == 'secondary' && $transaction_type == 'sale' && $property_type == 'house') {
+            return view('components.forms.secondary-house-form');
+        } elseif ($market_type == 'primary' && $transaction_type == 'sale' && $property_type == 'flat') {
+            return view('components.forms.primary-flat-form');
+        } elseif ($market_type == 'secondary' && $transaction_type == 'sale' && $property_type == 'flat') {
+            return view('components.forms.secondary-flat-form');
+        } elseif ($market_type == 'primary' && $transaction_type == 'sale' && $property_type == 'premises') {
+            return view('components.forms.primary-premises-form');
+        } elseif ($market_type == 'secondary' && $transaction_type == 'sale' && $property_type == 'premises') {
+            return view('components.forms.secondary-premises-form');
+        } elseif ($transaction_type == 'rent' && $property_type == 'house') {
+            return view('components.forms.house-rent-form');
+        } elseif ($transaction_type == 'rent' && $property_type == 'flat') {
+            return view('components.forms.flat-rent-form');
+        } elseif ($transaction_type == 'rent' && $property_type == 'premises') {
+            return view('components.forms.premises-rent-form');
+        } elseif ($transaction_type == 'lease' && $property_type == 'plot') {
+            return view('components.forms.plot-lease-form');
+        } else {
+            return view('components.forms.no-form');
+        }
     }
 
     /**
@@ -28,6 +54,6 @@ class GetOfferForm extends Component
      */
     public function render()
     {
-        return view('components.get-offer-form');
+        return view('components.forms.get-offer-form');
     }
 }
