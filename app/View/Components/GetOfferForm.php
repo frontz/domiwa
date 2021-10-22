@@ -22,14 +22,10 @@ class GetOfferForm extends Component
         $transaction_type = $request->input('transaction_type');
         $property_type = $request->input('property_type');
 
-        if ($market_type == 'primary' && $transaction_type == 'sale' && $property_type == 'house') {
-            return view('components.forms.primary-house-form');
-        } elseif ($market_type == 'secondary' && $transaction_type == 'sale' && $property_type == 'house') {
-            return view('components.forms.secondary-house-form');
-        } elseif ($market_type == 'primary' && $transaction_type == 'sale' && $property_type == 'flat') {
-            return view('components.forms.primary-flat-form');
-        } elseif ($market_type == 'secondary' && $transaction_type == 'sale' && $property_type == 'flat') {
-            return view('components.forms.secondary-flat-form');
+        if ($transaction_type == 'sale' && $property_type == 'house') {
+            return view('components.add-house');
+        } elseif ($transaction_type == 'sale' && $property_type == 'flat') {
+            return view('components.add-flat');
         } elseif ($market_type == 'primary' && $transaction_type == 'sale' && $property_type == 'premises') {
             return view('components.forms.primary-premises-form');
         } elseif ($market_type == 'secondary' && $transaction_type == 'sale' && $property_type == 'premises') {
