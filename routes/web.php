@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FlatController;
 use App\Http\Controllers\HouseController;
 use App\Http\Controllers\LoadFormController;
 use App\Http\Controllers\ReadXmlController;
@@ -78,14 +79,12 @@ Route::get('/report', function () {
 Route::get('/get-form', function () {
     return view('components.forms.get-offer-form');
 })->name('offers-management');
+
 Route::post('/get-form', [GetOfferForm::class, 'getForm']);
 
-Route::get('/houses', [HouseController::class, 'index'])->name('houses.index')->middleware('auth');
-Route::get('/houses/create', [HouseController::class, 'create'])->name('houses.create')->middleware('auth');
-Route::post('/houses', [HouseController::class, 'store'])->name('houses.store')->middleware('auth');
-Route::get('/houses/edit/{house}', [HouseController::class, 'edit'])->name('houses.edit')->middleware('auth');
-Route::post('/houses/{house}', [HouseController::class, 'update'])->name('houses.update')->middleware('auth');
-Route::delete('/houses/{house}', [HouseController::class, 'destroy'])->name('houses.destroy')->middleware('auth');
+Route::get('/flats', [FlatController::class, 'index'])->name('flats.index');
+Route::get('/flats/create', [FlatController::class, 'create'])->middleware('auth')->name('flats.create');
+Route::post('/flats', [FlatController::class, 'store'])->middleware('auth')->name('flats.store');
 
 Route::get('/downloadxml', [DownloadXmlFile::class, 'downloadXmlFile'])->name('downloadxml');
 
