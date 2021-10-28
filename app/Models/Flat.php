@@ -21,6 +21,7 @@ class Flat extends Model
         'rooms_nr',
         'description',
         'title',
-        'market'
+        'market',
+        'images',
     ];
 }

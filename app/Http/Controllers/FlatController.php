@@ -39,7 +39,33 @@ class FlatController extends Controller
      */
     public function store(Request $request)
     {
-        $flat = new Flat($request->all());
+
+        $flat = new Flat;
+        $flat->status = $request->input('status');
+        $flat->voivodeship = $request->input('voivodeship');
+        $flat->district = $request->input('district');
+        $flat->commune = $request->input('commune');
+        $flat->street = $request->input('street');
+        $flat->area = $request->input('area');
+        $flat->price = $request->input('price');
+        $flat->rooms_nr = $request->input('rooms_nr');
+        $flat->description = $request->input('description');
+        $flat->title = $request->input('title');
+        $flat->market = $request->input('market');
+//        $image_name = $request->file('image')->getClientOriginalName();
+//        $request->file('image')->storeAs('images/flats' . time(), $image_name);
+
+        $images = [];
+        foreach ($request->file as $key => $file) {
+            $fileName = time().'_'.$file->getClientOriginalName();
+            $filePath = 'images/flats/' . $fileName;
+            $file->storeAs('images/flats', $fileName);
+            array_push($images, $filePath);
+        }
+
+        $flat->images = json_encode($images);
+//        dump(json_encode($images));
+
         $flat->save();
         return redirect(route('offers-management'));
     }
@@ -47,7 +73,7 @@ class FlatController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -58,7 +84,7 @@ class FlatController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -70,7 +96,7 @@ class FlatController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -81,7 +107,7 @@ class FlatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
