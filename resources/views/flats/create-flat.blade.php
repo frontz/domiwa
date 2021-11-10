@@ -67,7 +67,7 @@
                                 <div class="sm:col-span-3">
                                     <input type="text" name="street"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Ulica *" value="{{ old('city') }}"/>
+                                           placeholder="Ulica *" value="{{ old('street') }}"/>
                                     @error('street')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
@@ -76,7 +76,7 @@
                                     <input type="number" step="0.5" name="area"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Powierzchnia *" value="{{ old('surface') }}"/>
-                                    @error('surface')
+                                    @error('area')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -106,6 +106,11 @@
                                     @error('title')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
+                                </div>
+                                <div class="sm:col-span-2" style="display: none">
+                                    <input type="text" name="market"
+                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           value="secondary"/>
                                 </div>
                                 <div class="sm:col-span-5">
                                 <textarea name="description"
@@ -138,17 +143,9 @@
                                     <input type="number" name="floor_nr" step="1"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Liczba pięter" value="{{ old('floor_nr') }}"/>
-                                    @error('floor')
+                                    @error('floor_nr')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <select name="lift"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Winda</option>
-                                        <option value="true">Tak</option>
-                                        <option value="false">Nie</option>
-                                    </select>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" name="year_build" step="1"
@@ -161,22 +158,22 @@
                                 <div class="sm:col-span-8 text-gray-500 pt-5">
                                     <div style="display: inline-block"><p>Typ kuchni:</p></div>
                                     <div style="display: inline-block" class="text-sm">
-                                        <input type="checkbox" name="kitchen_type" value="widna"
+                                        <input type="checkbox" name="kitchen_type[]" value="widna"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('kitchen_type') }}"/>
-                                        <label for="kitchen_type">Widna</label>
-                                        <input type="checkbox" name="kitchen_type" value="zamknięta"
+                                        <label for="kitchen_type">zamknięta</label>
+                                        <input type="checkbox" name="kitchen_type[]" value="zamknięta"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('kitchen_type') }}"/>
-                                        <label for="kitchen_type">Zamknięta</label>
-                                        <input type="checkbox" name="kitchen_type" value="z aneksem"
+                                        <label for="kitchen_type">aneks</label>
+                                        <input type="checkbox" name="kitchen_type[]" value="z aneksem"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('kitchen_type') }}"/>
-                                        <label for="kitchen_type">Z aneksem</label>
-                                        <input type="checkbox" name="kitchen_type" value="z oknem"
+                                        <label for="kitchen_type">widna</label>
+                                        <input type="checkbox" name="kitchen_type[]" value="z oknem"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('kitchen_type') }}"/>
-                                        <label for="kitchen_type">Z oknem</label>
+                                        <label for="kitchen_type">ciemna</label>
                                     </div>
                                 </div>
                             </div>
@@ -185,22 +182,22 @@
                                 <div class="sm:col-span-8 text-gray-500">
                                     <div style="display: inline-block"><p>Media:</p></div>
                                     <div style="display: inline-block" class="text-sm">
-                                        <input type="checkbox" name="media" value="Światłowód"
+                                        <input type="checkbox" name="media[]" value="Światłowód"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('światłowód') }}"/>
-                                        <label for="kitchen_type">Światłowód</label>
-                                        <input type="checkbox" name="media" value="TV kablowa"
+                                        <label for="kitchen_type">światłowód</label>
+                                        <input type="checkbox" name="media[]" value="TV kablowa"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('TV kablowa') }}"/>
                                         <label for="kitchen_type">TV kablowa</label>
-                                        <input type="checkbox" name="Internet" value="Internet"
+                                        <input type="checkbox" name="media[]" value="Internet"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('Internet') }}"/>
                                         <label for="kitchen_type">Internet</label>
-                                        <input type="checkbox" name="kitchen_type" value="Ogrzewanie miejskie"
+                                        <input type="checkbox" name="media[]" value="Ogrzewanie miejskie"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('Ogrzewanie miejskie') }}"/>
-                                        <label for="kitchen_type">Ogrzewanie m-skie</label>
+                                        <label for="kitchen_type">klimatyzacja</label>
                                     </div>
                                 </div>
                             </div>
@@ -208,13 +205,24 @@
 
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2">
+                                    <select name="heating"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Ogrzewanie</option>
+                                        <option value="miejskie">miejskie</option>
+                                        <option value="CO z własnej kotłowni">CO z własnej kotłowni</option>
+                                        <option value="gazowe">gazowe</option>
+                                        <option value="inne">inne</option>
+                                        <option value="brak">brak</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
                                     <select name="parking"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">M-ce parkingowe</option>
-                                        <option value="Garaż podziemny">Garaż podziemny</option>
-                                        <option value="M-ce parkingowe niestrz.">M-ce parkingowe niestrz.</option>
-                                        <option value="M-ce parkingowe strz.">M-ce parkingowe strz.</option>
-                                        <option value="Brak">Brak</option>
+                                        <option value="garaż podziemny">garaż podziemny</option>
+                                        <option value="garaż wolnostojący">garaż wolnostojący</option>
+                                        <option value="przy ulicy">przy ulicy</option>
+                                        <option value="brak">brak</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
@@ -222,8 +230,8 @@
                                         <select name="furniture"
                                                 class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                             <option value="" style="display: none">Meble</option>
-                                            <option value="true">Tak</option>
-                                            <option value="false">Nie</option>
+                                            <option value="1">Tak</option>
+                                            <option value="0">Nie</option>
                                         </select>
                                     </div>
                                 </div>
@@ -231,32 +239,24 @@
                                     <select name="lift"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">Winda</option>
-                                        <option value="true">Tak</option>
-                                        <option value="false">Nie</option>
-                                    </select>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <select name="garage"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Garaż</option>
-                                        <option value="true">Tak</option>
-                                        <option value="false">Nie</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="attic"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">Na poddaszu</option>
-                                        <option value="true">Tak</option>
-                                        <option value="false">Nie</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
-                                    <select name="two_level"
+                                    <select name="two_levels"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">Dwupoziomowe</option>
-                                        <option value="true">Tak</option>
-                                        <option value="false">Nie</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
                                     </select>
                                 </div>
                             </div>
@@ -288,37 +288,48 @@
                                     <select name="fitted_kitchen"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">Kuchnia wyposaż.</option>
-                                        <option value="true">Tak</option>
-                                        <option value="false">Nie</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <select name="condition"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Stan lokalu</option>
+                                        <option value="nowy">nowy</option>
+                                        <option value="bardzo dobry">bardzo dobry</option>
+                                        <option value="do odświerzenia">do odświerzenia</option>
+                                        <option value="do remontu">do remontu</option>
+                                        <option value="do wykończenia">do wykończenia</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="closed_estate"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">Osiedle zamknięte</option>
-                                        <option value="true">Tak</option>
-                                        <option value="false">Nie</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="exclusivity"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">Na wyłączność</option>
-                                        <option value="true">Tak</option>
-                                        <option value="false">Nie</option>
-                                    </select>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <select name="without_commission"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Bez prowizji</option>
-                                        <option value="true">Tak</option>
-                                        <option value="false">Nie</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
+                                <div class="sm:col-span-2">
+                                    <select name="without_commission"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Bez prowizji</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
+                                    </select>
+                                </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="broker_email"
                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"

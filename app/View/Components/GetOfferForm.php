@@ -25,7 +25,7 @@ class GetOfferForm extends Component
         if ($transaction_type == 'sale' && $property_type == 'house') {
             return view('components.add-house');
         } elseif ($transaction_type == 'sale' && $property_type == 'flat') {
-            return view('components.create-flat', ['market_type' => $market_type]);
+            return view('flats.create-flat', ['market_type' => $market_type]);
         } elseif ($market_type == 'primary' && $transaction_type == 'sale' && $property_type == 'premises') {
             return view('components.forms.primary-premises-form');
         } elseif ($market_type == 'secondary' && $transaction_type == 'sale' && $property_type == 'premises') {

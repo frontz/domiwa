@@ -40,6 +40,8 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('/offers', [FlatController::class, 'index'])->name('offers');
+
 Route::get('/aftermarket', function () {
     return view('aftermarket');
 })->name('aftermarket');
@@ -85,6 +87,7 @@ Route::post('/get-form', [GetOfferForm::class, 'getForm']);
 Route::get('/flats', [FlatController::class, 'index'])->name('flats.index');
 Route::get('/flats/create', [FlatController::class, 'create'])->middleware('auth')->name('flats.create');
 Route::post('/flats', [FlatController::class, 'store'])->middleware('auth')->name('flats.store');
+Route::get('/flats/show/{flat}', [FlatController::class, 'show'])->name('flats.show');
 
 Route::get('/downloadxml', [DownloadXmlFile::class, 'downloadXmlFile'])->name('downloadxml');
 
