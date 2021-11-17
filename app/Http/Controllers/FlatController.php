@@ -16,10 +16,12 @@ class FlatController extends Controller
      *
      * @return View
      */
-    public function index()
+    public function index(Request $request)
     {
+
+        $paginator = $request->input('paginator');
         return view('flats.index', [
-            'flats' => Flat::paginate(6)
+            'flats' => Flat::paginate($paginator)
         ]);
     }
 
