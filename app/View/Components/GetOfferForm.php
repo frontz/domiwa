@@ -18,25 +18,25 @@ class GetOfferForm extends Component
     }
 
     public function getForm(Request $request) {
-        $market_type = $request->input('market_type');
-        $transaction_type = $request->input('transaction_type');
-        $property_type = $request->input('property_type');
+        $market = $request->input('market');
+        $transaction = $request->input('transaction');
+        $property = $request->input('property');
 
-        if ($transaction_type == 'sale' && $property_type == 'house') {
+        if ($transaction == 'sale' && $property == 'house') {
             return view('components.add-house');
-        } elseif ($transaction_type == 'sale' && $property_type == 'flat') {
-            return view('flats.create-flat', ['market_type' => $market_type]);
-        } elseif ($market_type == 'primary' && $transaction_type == 'sale' && $property_type == 'premises') {
+        } elseif ($transaction == 'sale' && $property == 'flat') {
+            return view('flats.create-flat', ['market' => $market]);
+        } elseif ($transaction == 'sale' && $property == 'premises') {
             return view('components.forms.primary-premises-form');
-        } elseif ($market_type == 'secondary' && $transaction_type == 'sale' && $property_type == 'premises') {
+        } elseif ($market == 'secondary' && $transaction == 'sale' && $property == 'premises') {
             return view('components.forms.secondary-premises-form');
-        } elseif ($transaction_type == 'rent' && $property_type == 'house') {
+        } elseif ($transaction == 'rent' && $property == 'house') {
             return view('components.forms.house-rent-form');
-        } elseif ($transaction_type == 'rent' && $property_type == 'flat') {
+        } elseif ($transaction == 'rent' && $property == 'flat') {
             return view('components.forms.flat-rent-form');
-        } elseif ($transaction_type == 'rent' && $property_type == 'premises') {
+        } elseif ($transaction == 'rent' && $property == 'premises') {
             return view('components.forms.premises-rent-form');
-        } elseif ($transaction_type == 'lease' && $property_type == 'plot') {
+        } elseif ($transaction == 'lease' && $property == 'plot') {
             return view('components.forms.plot-lease-form');
         } else {
             return view('components.forms.no-form');

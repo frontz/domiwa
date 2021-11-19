@@ -22,7 +22,7 @@
 
                                     <div class="relative">
 
-                                        <select name="market_type"
+                                        <select name="market"
                                                 class="border rounded-lg px-3 bg-gray-100 border border-gray-400 py-2 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                             <option value="#">Wybierz rynek</option>
                                             <option value="primary">Pierwotny</option>
@@ -34,7 +34,7 @@
                                 <div class="flex-1 pt-6">
 
                                     <div class="relative">
-                                        <select name="transaction_type"
+                                        <select name="transaction"
                                                 class="border rounded-lg px-3 bg-gray-100 border border-gray-400 py-2 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                             <option value="#">Typ transakcji</option>
                                             <option value="sale">Sprzedaż</option>
@@ -46,7 +46,7 @@
                                 <div class="flex-1 pt-6">
 
                                     <div class="relative">
-                                        <select name="property_type"
+                                        <select name="property"
                                                 class="border rounded-lg px-3 bg-gray-100 border border-gray-400 py-2 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                             <option value="#">Typ nieruchomości</option>
                                             <option value="flat">Mieszkanie</option>

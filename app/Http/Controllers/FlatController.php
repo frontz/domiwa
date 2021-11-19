@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Flat;
+use Exception;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
@@ -43,6 +45,21 @@ class FlatController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'status' => 'required',
+            'voivodeship' => 'required|min:10',
+            'district' => 'required|min:5',
+            'city' => 'required|min:5',
+            'commune' => 'required|min:5',
+            'street' => 'required|min:5',
+            'area' => 'required|numeric|min:0',
+            'price' => 'required',
+            'rooms_nr' => 'required',
+            'title' => 'required|min:10',
+            'description' => 'required|min:10',
+        ]);
+
         $flat = new Flat;
         $flat->status = $request->input('status');
         $flat->voivodeship = $request->input('voivodeship');
@@ -92,9 +109,11 @@ class FlatController extends Controller
         }
 
         $flat->images = json_encode($images);
-        $flat->save();
 
-        return redirect(route('offers-management'));
+       $flat->save();
+
+       return redirect(route('flats.create'));
+
     }
 
     /**
@@ -113,12 +132,14 @@ class FlatController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Flat $flat
+     * @return View
      */
-    public function edit($id)
+    public function edit(Flat $flat): View
     {
-        //
+        return view('flats.edit-flat', [
+            'flat' => $flat
+        ]);
     }
 
     /**
@@ -136,11 +157,16 @@ class FlatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Flat $flat
+     * @return RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Flat $flat): RedirectResponse
     {
-        //
+        try {
+            $flat->delete();
+            return redirect(route('offers'));
+        } catch (Exception $e) {
+            return redirect(route('offers'));
+        }
     }
 }

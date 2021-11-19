@@ -105,15 +105,13 @@
                             <div class="bg-blue-600 py-1" role="none">
                                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                                 <a href="{{ route('admins') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Zarządzaj użytkownikami</a>
-                                <a href="{{ route('offers-management') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Zarządzaj ofertami</a>
+                                <a href="{{ route('flats.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Zarządzaj ofertami</a>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <a href="#" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" onclick="event.preventDefault(); this.closest('form').submit();">Wyloguj</a>
                                 </form>
                             </div>
                         </div>
-
-
                     @endif
                 </div>
             </div>

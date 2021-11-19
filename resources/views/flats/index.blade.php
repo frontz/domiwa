@@ -17,17 +17,20 @@
                                 @csrf
                                 <button type="submit" name="paginator"
                                         class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500
-                                focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block float-right" value="1">
+                                focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block float-right"
+                                        value="1">
                                     <span class="inline-block mx-2">12</span>
                                 </button>
                                 <button type="submit" name="paginator"
-                                    class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500
-                                focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block float-right mr-2" value="2">
+                                        class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500
+                                focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block float-right mr-2"
+                                        value="2">
                                     <span class="inline-block mx-2">24</span>
                                 </button>
                                 <button type="submit" name="paginator"
-                                    class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500
-                                focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block float-right mr-2" value="1000">
+                                        class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500
+                                focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block float-right mr-2"
+                                        value="1000">
                                     <span class="inline-block mx-2">all</span>
                                 </button>
                             </form>
@@ -50,22 +53,32 @@
                                             <h4 class="text-xl font-semibold">{{ $flat->title }}</h4>
                                             <p class="text-sm mt-2">{{ $flat->description }}</p>
                                             <p class="text-sm mt-2 text-lg">{{ $flat->city }}</p>
-                                            <p class="text-sm mt-2 font-bold">Powierzchnia: {{ $flat->area }} m<sup>2</sup></p>
+                                            <p class="text-sm mt-2 font-bold">Powierzchnia: {{ $flat->area }}
+                                                m<sup>2</sup></p>
                                             <p class="text-sm mt-2 italic">Cena: {{ $flat->price }} PLN</p>
-                                            <a href="{{ route('flats.show', $flat->id) }}">
-                                                <button
-                                                    class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
-                                                    <span class="inline-block mx-2">Szczegóły >></span>
-                                                </button>
-{{--                                                <button--}}
-{{--                                                    class="transition duration-200 bg-green-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">--}}
-{{--                                                    <span class="inline-block mx-2">Edytuj</span>--}}
-{{--                                                </button>--}}
-{{--                                                <button--}}
-{{--                                                    class="transition duration-200 bg-red-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">--}}
-{{--                                                    <span class="inline-block mx-2">Usuń</span>--}}
-{{--                                                </button>--}}
-                                            </a>
+
+                                            @if(Auth::guest())
+                                                <a href="{{ route('flats.show', $flat->id) }}">
+                                                    <button
+                                                        class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                                                        <span class="inline-block mx-2">Szczegóły >></span>
+                                                    </button>
+                                                </a>
+                                            @else
+                                                <a href="{{ route('flats.edit', $flat->id) }}">
+                                                    <button
+                                                        class="transition duration-200 bg-green-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                                                        <span class="inline-block mx-2">Edytuj</span>
+                                                    </button>
+                                                </a>
+                                                <a href="{{ route('flats.delete', $flat->id) }}">
+                                                    @csrf
+                                                    <button
+                                                        class="transition duration-200 bg-red-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                                                        <span class="inline-block mx-2">Usuń</span>
+                                                    </button>
+                                                </a>
+                                            @endif
                                         </div>
                                     </div>
                                 @endforeach
