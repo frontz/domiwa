@@ -64,18 +64,26 @@
                                         @endforeach
                                     </span>
                                 </div>
+                                @if(isset($flat->heating))
                                 <div class="py-1">
                                     <span>Ogrzewanie: <b>{{ $flat->heating }}</b></span>
                                 </div>
+                                @endif
+                                @if(isset($flat->parking))
                                 <div class="py-1">
                                     <span>M-ce parkingowe: <b>{{ $flat->parking }}</b></span>
                                 </div>
+                                @endif
+                                @if(isset($flat->balcony))
                                 <div class="py-1">
                                     <span>Balkon: <b>{{ $flat->balcony }}</b></span>
                                 </div>
+                                @endif
+                                @if(isset($flat->basement))
                                 <div class="py-1">
                                     <span>Piwnica: <b>{{ $flat->basement }}</b></span>
                                 </div>
+                                @endif
                                 @if ($flat->lift === 1)
                                     <div class="py-1">
                                         <b>Winda</b>
@@ -91,9 +99,11 @@
                                         <b>Kuchnia wyposażona</b>
                                     </div>
                                 @endif
+                                @if(isset($flat->condition))
                                 <div class="py-1">
                                     <span>Stan lokalu: <b>{{ $flat->condition }}</b></span>
                                 </div>
+                                @endif
                                 @if ($flat->exclusivity === 1)
                                     <div class="py-1">
                                         <b>Mieszkanie na wyłączność</b>

@@ -9,7 +9,7 @@ class Flat extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    public $fillable = [
         'status',
         'voivodeship',
         'district',

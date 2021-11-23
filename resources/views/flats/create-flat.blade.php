@@ -48,7 +48,7 @@
                                 <div class="sm:col-span-2">
                                     <input type="text" name="commune"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Gmina *" value="{{ old('community') }}"/>
+                                           placeholder="Gmina *" value="{{ old('commune') }}"/>
                                     @error('commune')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
@@ -75,7 +75,7 @@
                                 <div class="sm:col-span-3">
                                     <input type="number" step="0.5" min="0" name="area"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Powierzchnia *" value="{{ old('surface') }}"/>
+                                           placeholder="Powierzchnia *" value="{{ old('area') }}"/>
                                     @error('area')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
@@ -102,7 +102,7 @@
                                 <div class="sm:col-span-5">
                                     <input type="text" name="title"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Tytuł w internecie *" value="{{ old('room_nr') }}"/>
+                                           placeholder="Tytuł w internecie *"/>
                                     @error('title')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
@@ -115,8 +115,8 @@
                                 <div class="sm:col-span-5">
                                 <textarea name="description"
                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                          placeholder="Opis ogólny *" value="{{ old('city') }}"></textarea>
-                                    @error('street')
+                                          placeholder="Opis ogólny *" value="{{ old('description') }}"></textarea>
+                                    @error('description')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>

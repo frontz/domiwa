@@ -9,9 +9,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    {{--                    Tutaj p-10 - ustawiłem margines od krawędzi karty--}}
                     <div class="bg-orange-200">
                         <div class="w-full p-4 float-right">
+
+                            @include('layouts.flash-message')
 
                             <form action="{{ route('flats.index') }}" method="POST">
                                 @csrf
@@ -67,14 +68,14 @@
                                             @else
                                                 <a href="{{ route('flats.edit', $flat->id) }}">
                                                     <button
-                                                        class="transition duration-200 bg-green-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                                                        class="transition duration-200 bg-green-500 mt-4 hover:bg-green-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                                                         <span class="inline-block mx-2">Edytuj</span>
                                                     </button>
                                                 </a>
                                                 <a href="{{ route('flats.delete', $flat->id) }}">
                                                     @csrf
                                                     <button
-                                                        class="transition duration-200 bg-red-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                                                        class="transition duration-200 bg-red-500 mt-4 hover:bg-red-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                                                         <span class="inline-block mx-2">Usuń</span>
                                                     </button>
                                                 </a>
@@ -94,3 +95,5 @@
     </div>
 
 </x-app-layout>
+
+

@@ -10,11 +10,18 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="p-10 bg-orange-200">
-                        <form method="post" action="{{ route('flats.store') }}" enctype="multipart/form-data">
+                        <form action="{{ route('flats.update', $flat->id) }}" method="post"
+                              enctype="multipart/form-data">
                             @csrf
+
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2">
-                                    <input type="number" name="id" disabled
+                                    <input type="number" disabled
+                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           value="{{ $flat->id }}"/>
+                                </div>
+                                <div class="sm:col-span-2" style="display: none">
+                                    <input type="number" name="id"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            value="{{ $flat->id }}"/>
                                 </div>
@@ -108,11 +115,7 @@
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                {{--                                <div class="sm:col-span-2" style="display: none">--}}
-                                {{--                                    <input type="text" name="market"--}}
-                                {{--                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"--}}
-                                {{--                                           value="secondary"/>--}}
-                                {{--                                </div>--}}
+
                                 <div class="sm:col-span-5">
                                 <textarea name="description"
                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
@@ -163,32 +166,40 @@
 
                                         <input type="checkbox" name="kitchen_type[]" value="z aneksem"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               @if(is_array(json_decode($flat->kitchen_type))) {
                                                @foreach(json_decode($flat->kitchen_type) as $kitchen_type)
                                                @if($kitchen_type === 'z aneksem') { checked } @endif
-                                            @endforeach
+                                               @endforeach }
+                                            @endif
                                         />
                                         <label for="kitchen_type">z aneksem</label>
 
                                         <input type="checkbox" name="kitchen_type[]" value="widna"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               @if(is_array(json_decode($flat->kitchen_type))) {
                                                @foreach(json_decode($flat->kitchen_type) as $kitchen_type)
                                                @if($kitchen_type === 'widna') { checked } @endif
-                                            @endforeach
+                                               @endforeach }
+                                            @endif
                                         />
                                         <label for="kitchen_type">widna</label>
 
                                         <input type="checkbox" name="kitchen_type[]" value="z oknem"
+                                               @if(is_array(json_decode($flat->kitchen_type))) {
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                @foreach(json_decode($flat->kitchen_type) as $kitchen_type)
                                                @if($kitchen_type === 'ciemna') { checked } @endif
-                                        @endforeach
+                                               @endforeach }
+                                        @endif
                                         <label for="kitchen_type">z oknem</label>
 
                                         <input type="checkbox" name="kitchen_type[]" value="zamknięta"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               @if(is_array(json_decode($flat->kitchen_type))) {
                                                @foreach(json_decode($flat->kitchen_type) as $kitchen_type)
-                                               @if($kitchen_type === 'zamknięta') { checked } @endif
-                                            @endforeach
+                                               @if($kitchen_type === 'zamknięta') { checked } @endif }
+                                               @endforeach }
+                                            @endif
                                         />
                                         <label for="kitchen_type">zamknięta</label>
                                     </div>
@@ -201,33 +212,41 @@
                                     <div style="display: inline-block" class="text-sm">
                                         <input type="checkbox" name="media[]" value="Światłowód"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               @if(is_array(json_decode($flat->media))) {
                                                @foreach(json_decode($flat->media) as $media)
                                                @if($media === 'Światłowód') { checked } @endif
-                                            @endforeach
+                                               @endforeach }
+                                            @endif
                                         />
                                         <label for="kitchen_type">Światłowód</label>
 
                                         <input type="checkbox" name="media[]" value="TV kablowa"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               @if(is_array(json_decode($flat->media))) {
                                                @foreach(json_decode($flat->media) as $media)
                                                @if($media === 'TV kablowa') { checked } @endif
-                                            @endforeach
+                                               @endforeach }
+                                            @endif
                                         />
                                         <label for="kitchen_type">TV kablowa</label>
 
                                         <input type="checkbox" name="media[]" value="Internet"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               @if(is_array(json_decode($flat->media))) {
                                                @foreach(json_decode($flat->media) as $media)
                                                @if($media === 'Internet') { checked } @endif
-                                            @endforeach
+                                               @endforeach }
+                                            @endif
                                         />
                                         <label for="kitchen_type">Internet</label>
 
                                         <input type="checkbox" name="media[]" value="klimatyzacja"
                                                class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               @if(is_array(json_decode($flat->media))) {
                                                @foreach(json_decode($flat->media) as $media)
                                                @if($media === 'klimatyzacja') { checked } @endif
-                                            @endforeach
+                                               @endforeach }
+                                            @endif
                                         />
                                         <label for="kitchen_type">klimatyzacja</label>
                                     </div>
@@ -437,10 +456,14 @@
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1 text-gray-500">
                                 <div class="sm:col-span-4">
                                     <label for="files">Zdjęcia dla oferty:</label>
-                                    <input type="file" id="files" name="file[]" multiple accept="image/*"><br><br>
+                                    <input type="file" id="files" name="file[]" multiple accept="image/*" required><br><br>
                                     <pre id="file-list" style="display:none;"></pre>
                                 </div>
                             </div>
+
+                            @foreach(json_decode($flat->images) as $image)
+                                <div class="text-gray-500">{{ $loop->index + 1 }}. {{ $image }}</div>
+                            @endforeach
 
                             <div class="gap-6 py-5 px-1">
                                 <button

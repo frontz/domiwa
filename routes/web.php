@@ -86,7 +86,8 @@ Route::post('/get-form', [GetOfferForm::class, 'getForm']);
 
 Route::post('/flats', [FlatController::class, 'index'])->name('flats.index');
 Route::get('/flats/create', [FlatController::class, 'create'])->middleware('auth')->name('flats.create');
-Route::get('/flats/edit{flat}', [FlatController::class, 'edit'])->middleware('auth')->name('flats.edit');
+Route::post('/flats/update/{flat}', [FlatController::class, 'update'])->middleware('auth')->name('flats.update');
+Route::get('/flats/edit/{flat}', [FlatController::class, 'edit'])->middleware('auth')->name('flats.edit');
 Route::post('/flats/store', [FlatController::class, 'store'])->middleware('auth')->name('flats.store');
 Route::get('/flats/show/{flat}', [FlatController::class, 'show'])->name('flats.show');
 Route::get('/flats/delete/{flat}', [FlatController::class, 'destroy'])->middleware('auth')->name('flats.delete');
