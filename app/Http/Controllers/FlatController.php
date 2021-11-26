@@ -146,7 +146,6 @@ class FlatController extends Controller
     public function update(Request $request, Flat $flat)
     {
         $flat_id = (int)$request->input('id');
-
         $request->validate([
             'status' => 'required',
             'voivodeship' => 'required|min:10',
@@ -197,15 +196,18 @@ class FlatController extends Controller
         $flat->without_commission = $request->input('without_commission');
         $flat->broker_email = $request->input('broker_email');
         $flat->broker_phone = $request->input('broker_phone');
-        $images = [];
-        foreach ($request->file as $key => $file) {
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $filePath = 'images/flats/' . $fileName;
-            $file->storeAs('images/flats', $fileName);
-            array_push($images, $filePath);
+        if ($request->file) {
+            $images = [];
+            foreach ($request->file as $key => $file) {
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $filePath = 'images/flats/' . $fileName;
+                $file->storeAs('images/flats', $fileName);
+                array_push($images, $filePath);
+            }
+            $flat->images = json_encode($images);
+        } else {
+            $flat->images = $request->input('images');
         }
-        $flat->images = json_encode($images);
-
         try {
             DB::table('flats')
                 ->where('id', $flat_id)

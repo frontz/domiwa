@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\FlatController;
-use App\Http\Controllers\HouseController;
-use App\Http\Controllers\LoadFormController;
+use App\Http\Controllers\PremisesController;
 use App\Http\Controllers\ReadXmlController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\DownloadXmlFile;
@@ -82,7 +81,7 @@ Route::get('/get-form', function () {
     return view('components.forms.get-offer-form');
 })->name('offers-management');
 
-Route::post('/get-form', [GetOfferForm::class, 'getForm']);
+Route::post('/get-form', [GetOfferForm::class, 'getForm'])->name('get-form');
 
 Route::post('/flats', [FlatController::class, 'index'])->name('flats.index');
 Route::get('/flats/create', [FlatController::class, 'create'])->middleware('auth')->name('flats.create');
@@ -91,6 +90,14 @@ Route::get('/flats/edit/{flat}', [FlatController::class, 'edit'])->middleware('a
 Route::post('/flats/store', [FlatController::class, 'store'])->middleware('auth')->name('flats.store');
 Route::get('/flats/show/{flat}', [FlatController::class, 'show'])->name('flats.show');
 Route::get('/flats/delete/{flat}', [FlatController::class, 'destroy'])->middleware('auth')->name('flats.delete');
+
+Route::get('/premises', [PremisesController::class, 'index'])->name('premises.index');
+Route::get('/premises/create', [PremisesController::class, 'create'])->middleware('auth')->name('premises.create');
+Route::post('/premises/update/{premises}', [PremisesController::class, 'update'])->middleware('auth')->name('premises.update');
+Route::get('/premises/edit/{premises}', [PremisesController::class, 'edit'])->middleware('auth')->name('premises.edit');
+Route::post('/premises/store', [PremisesController::class, 'store'])->middleware('auth')->name('premises.store');
+Route::get('/premises/show/{premises}', [PremisesController::class, 'show'])->name('premises.show');
+Route::get('/premises/delete/{premises}', [PremisesController::class, 'destroy'])->middleware('auth')->name('premises.delete');
 
 Route::get('/downloadxml', [DownloadXmlFile::class, 'downloadXmlFile'])->name('downloadxml');
 

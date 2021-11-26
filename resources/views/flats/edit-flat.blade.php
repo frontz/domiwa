@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-blue-600 leading-tight">
-            Edytowanie oferty mieszkania
+            Edycja oferty mieszkania
         </h2>
     </x-slot>
 
@@ -450,13 +450,13 @@
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-
                             </div>
-
+                            {{--                            przechwycenie plików z bazy i przesłanie JSON-a jeśli pole 'input file' nie zostanie wypełnione--}}
+                            <input type="text" name="images" value="{{ $flat->images }}" style="display: none">
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1 text-gray-500">
                                 <div class="sm:col-span-4">
                                     <label for="files">Zdjęcia dla oferty:</label>
-                                    <input type="file" id="files" name="file[]" multiple accept="image/*" required><br><br>
+                                    <input type="file" id="files" name="file[]" multiple accept="image/*"><br><br>
                                     <pre id="file-list" style="display:none;"></pre>
                                 </div>
                             </div>
