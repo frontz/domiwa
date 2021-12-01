@@ -1,64 +1,4 @@
 <x-guest-layout>
-{{--    <x-auth-card>--}}
-{{--        <x-slot name="logo">--}}
-{{--            <a href="/">--}}
-{{--                <img src="{{ URL::to('/img/logo.jpg') }}" alt="no logo" style="width: 200px">--}}
-{{--            </a>--}}
-{{--        </x-slot>--}}
-
-{{--        <!-- Session Status -->--}}
-{{--        <x-auth-session-status class="mb-4" :status="session('status')"/>--}}
-
-{{--        <!-- Validation Errors -->--}}
-{{--        <x-auth-validation-errors class="mb-4" :errors="$errors"/>--}}
-
-{{--        <form method="POST" action="{{ route('login') }}">--}}
-{{--        @csrf--}}
-
-{{--        <!-- Email Address -->--}}
-{{--            <div>--}}
-{{--                <x-label for="email" :value="__('Email')"/>--}}
-
-{{--                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required--}}
-{{--                         autofocus/>--}}
-{{--            </div> --}}
-
-{{--            <!-- Password -->--}}
-{{--            <div class="mt-4">--}}
-{{--                <x-label for="password" :value="__('Hasło')"/>--}}
-
-{{--                <x-input id="password" class="block mt-1 w-full"--}}
-{{--                         type="password"--}}
-{{--                         name="password"--}}
-{{--                         required autocomplete="current-password"/>--}}
-{{--            </div>--}}
-
-{{--            <!-- Remember Me -->--}}
-{{--            <div class="block mt-4">--}}
-{{--                <label for="remember_me" class="inline-flex items-center">--}}
-{{--                    <input id="remember_me" type="checkbox"--}}
-{{--                           class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"--}}
-{{--                           name="remember">--}}
-{{--                    <span class="ml-2 text-sm text-gray-600">Pamiętaj mnie</span>--}}
-{{--                </label>--}}
-{{--            </div>--}}
-
-{{--            <div class="flex items-center justify-end mt-4">--}}
-{{--                @if (Route::has('password.request'))--}}
-{{--                    <a class="underline text-sm text-gray-600 hover:text-gray-900"--}}
-{{--                       href="{{ route('password.request') }}" style="margin-right: 10px">--}}
-{{--                        Zapomniałeś hasła?--}}
-{{--                    </a>--}}
-{{--                @endif--}}
-{{--                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">--}}
-{{--                    Loguj--}}
-{{--                </button>--}}
-{{--            </div>--}}
-{{--        </form>--}}
-{{--    </x-auth-card>--}}
-
-
-<!-- component -->
     <div class="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12">
         <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
             <h1 class="font-bold text-center text-2xl mb-5">
@@ -98,7 +38,6 @@
                             </svg>
                         </button>
                     </div>
-
                     <div class="py-5">
                         <div class="grid grid-cols-2 gap-1">
                             <div class="text-center sm:text-left whitespace-nowrap">
@@ -115,7 +54,6 @@
                                         </a>
                                     </label>
                                 @endif
-
                             </div>
                             <div class="text-center sm:text-right whitespace-nowrap">
                                 <label for="remember_me" class="inline-flex items-center">
@@ -131,5 +69,4 @@
             </div>
         </div>
     </div>
-
 </x-guest-layout>

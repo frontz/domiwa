@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-blue-600 leading-tight">
-            Dodawanie oferty lokalu
+            Dodawanie oferty domu
         </h2>
     </x-slot>
 
@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="p-10 bg-orange-200">
-                        <form method="post" action="{{ route('premises.store') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('houses.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2">
@@ -107,7 +107,15 @@
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="sm:col-span-8">
+                                <div class="sm:col-span-2">
+                                    <input type="number" step="1" min="0" name="utility_rooms_nr"
+                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           placeholder="L. pomieszczeń *" value="{{ old('utility_rooms_nr') }}"/>
+                                    @error('utility_rooms_nr')
+                                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="sm:col-span-6">
                                     <input type="text" name="title"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Tytuł w internecie *"/>
@@ -130,92 +138,66 @@
 
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2">
-                                    <input type="number" name="phones_nr"
+                                    <input type="number" name="plot_area" min="0" step="1"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Liczba telefonów" value="{{ old('phone_nr') }}"/>
-                                    @error('phone_nr')
+                                           placeholder="Pow. działki *" value="{{ old('plot_area') }}"/>
+                                    @error('plot_area')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-
                                 <div class="sm:col-span-2">
-                                    <input type="number" name="year_build" step="1" min="1900"
+                                    <input type="text" name="building_type"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Rok budowy" value="{{ old('year_build') }}"/>
-                                    @error('year_build')
+                                           placeholder="Typ zabudowy" value="{{ old('building_type') }}"/>
+                                    @error('building_type')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="sm:col-span-2 text-gray-500">
-                                    <input type="number" name="n_geo_x"
+                                <div class="sm:col-span-2">
+                                    <input type="number" name="floors_nr" step="1" min="0"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Geo X" value="{{ old('n_geo_x') }}"/>
-                                </div>
-                                <div class="sm:col-span-2 text-gray-500">
-                                    <input type="number" name="n_geo_y"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Geo Y" value="{{ old('n_geo_y') }}"/>
+                                           placeholder="Liczba pięter" value="{{ old('floors_nr') }}"/>
+                                    @error('floors_nr')
+                                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div class="sm:col-span-2">
-                                    <select name="type"
+                                    <input type="number" name="bathrooms_nr" step="1" min="0"
+                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           placeholder="Liczba łazienek" value="{{ old('bathrooms_nr') }}"/>
+                                    @error('bathrooms_nr')
+                                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <select name="heating"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Typ lokalu</option>
-                                        <option value="handlowo-usługowy">handlowo-usługowy</option>
-                                        <option value="do pracy">do pracy</option>
+                                        <option value="" style="display: none">Ogrzewanie</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
-                                    <select name="destination"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Przeznaczenie</option>
-                                        <option value="handlowo-usługowe">handlowo-usługowe</option>
-                                        <option value="pracownicze">pracownicze</option>
-                                    </select>
+                                    <input type="text" name="driveway"
+                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           placeholder="Droga dojazdowa" value="{{ old('driveway') }}"/>
+                                    @error('driveway')
+                                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
 
-                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
-                                <div class="sm:col-span-2">
-                                    <select name="air_conditioning"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Klimatyzacja</option>
-                                        <option value="1">Tak</option>
-                                        <option value="0">Nie</option>
-                                    </select>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <select name="security"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Zabezpieczenia</option>
-                                        <option value="Alarm">Alarm</option>
-                                        <option value="Ochrona">Ochrona</option>
-                                    </select>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <select name="office"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Biuro</option>
-                                        <option value="1">Tak</option>
-                                        <option value="0">Nie</option>
-                                    </select>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <select name="office_type"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Typ biura</option>
-                                        <option value="lokal usługowy">lokal usługowy</option>
-                                        <option value="lokal handlowy">lokal handlowy</option>
-                                    </select>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <select name="shopwindow"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Ma witrynę</option>
-                                        <option value="1">Tak</option>
-                                        <option value="0">Nie</option>
-                                    </select>
-                                </div>
 
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
+
+                                <div class="sm:col-span-2">
+                                    <select name="balcony"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Balkon</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
+                                    </select>
+                                </div>
                                 <div class="sm:col-span-2">
                                     <select name="water_connection"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
@@ -225,27 +207,68 @@
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
-                                    <select name="intercom"
+                                    <select name="decorated_garden"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Domofon</option>
+                                        <option value="" style="display: none">Ogród urządzony</option>
                                         <option value="1">Tak</option>
                                         <option value="0">Nie</option>
                                     </select>
                                 </div>
-                                <div class="sm:col-span-2 text-gray-500">
-                                    <input type="number" step="0.1" name="height"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Wysokość" value="{{ old('height') }}"/>
+                                <div class="sm:col-span-2">
+                                    <select name="electricity"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Prąd</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <select name="power"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Siła</option>
+                                        <option value="1">Tak</option>
+                                        <option value="0">Nie</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
+                                <div class="sm:col-span-2">
+                                    <select name="sewers"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Kanalizacja</option>
+                                        <option value="Miejska">Miejska</option>
+                                        <option value="Gminna">Gminna</option>
+                                        <option value="Zbiornik">Zbiornik</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <select name="roof_type"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Typ dachu</option>
+                                        <option value="Dachówka">Dachówka</option>
+                                        <option value="Blacha">Blacha</option>
+                                        <option value="Drewno">Drewno</option>
+                                    </select>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="condition"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Stan lokalu</option>
+                                        <option value="" style="display: none">Stan budynku</option>
                                         <option value="nowy">nowy</option>
                                         <option value="bardzo dobry">bardzo dobry</option>
                                         <option value="do odświerzenia">do odświerzenia</option>
                                         <option value="do remontu">do remontu</option>
                                         <option value="do wykończenia">do wykończenia</option>
+                                    </select>
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <select name="property_form"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Forma własności</option>
+                                        <option value="Własność">Własność</option>
+                                        <option value="Współwłasność">Współwłasność</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
@@ -256,26 +279,10 @@
                                         <option value="0">Nie</option>
                                     </select>
                                 </div>
-                                <div class="sm:col-span-2">
-                                    <select name="without_commission"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Bez prowizji</option>
-                                        <option value="1">Tak</option>
-                                        <option value="0">Nie</option>
-                                    </select>
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <select name="property_form"
-                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Typ własności</option>
-                                        <option value="własność">własność</option>
-                                        <option value="dzierżawa">dzierżawa</option>
-                                    </select>
-                                </div>
+
                             </div>
 
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
-
                                 <div class="sm:col-span-3">
                                     <input type="text" name="broker_email"
                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
@@ -292,22 +299,21 @@
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-
                             </div>
+
 
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1 text-gray-500">
                                 <div class="sm:col-span-4">
                                     <label for="files">Zdjęcia dla oferty:</label>
-                                    <input type="file" id="files" name="file[]" multiple accept="image/*"
-                                           required><br><br>
+                                    <input type="file" id="files" name="file[]" multiple accept="image/*" required><br><br>
                                     <pre id="file-list" style="display:none;"></pre>
                                 </div>
                             </div>
 
                             <div class="gap-6 py-5 px-1">
-                                <button
+                                <button type="submit"
                                     class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
-                                    <span class="inline-block mx-2">Dodaj lokal</span>
+                                    <span class="inline-block mx-2">Dodaj dom</span>
                                 </button>
                             </div>
                         </form>

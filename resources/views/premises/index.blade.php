@@ -13,6 +13,7 @@
                         <div class="w-full p-4 float-right">
 
                             @include('layouts.flash-message')
+                            @include('layouts.filter')
 
                             <form action="{{ route('premises.index') }}" method="POST">
                                 @csrf

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-blue-600 leading-tight">
-            Oferty mieszkań
+            Oferty domów
         </h2>
     </x-slot>
 
@@ -15,7 +15,7 @@
                             @include('layouts.flash-message')
                             @include('layouts.filter')
 
-                            <form action="{{ route('flats.index') }}" method="POST">
+                            <form action="{{ route('houses.index') }}" method="POST">
                                 @csrf
                                 <button type="submit" name="paginator"
                                         class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500
@@ -45,38 +45,38 @@
                             <!-- Component Start -->
 
                             <div class="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 max-w-6xl">
-                                @foreach($flats as $flat)
+                                @foreach($houses as $house)
                                     <div class="bg-gray-200 rounded-lg p-4 ml-4 text-center mb-4">
                                         <div class="h-40 bg-gray-400 rounded-lg">
-                                            <img src="{{ asset('storage/' . json_decode($flat->images, true)[0]) }}"
+                                            <img src="{{ asset('storage/' . json_decode($house->images, true)[0]) }}"
                                                  class="rounded flex" style="width: 350px; height: 200px">
                                         </div>
                                         <div class="mt-16">
-                                            <h4 class="text-xl font-semibold">{{ $flat->title }}</h4>
-                                            <p class="text-sm mt-2">{{ $flat->description }}</p>
-                                            <p class="text-sm mt-2 text-lg">{{ $flat->city }}</p>
-                                            <p class="text-sm mt-2 font-bold">Powierzchnia: {{ $flat->area }}
+                                            <h4 class="text-xl font-semibold">{{ $house->title }}</h4>
+                                            <p class="text-sm mt-2">{{ $house->description }}</p>
+                                            <p class="text-sm mt-2 text-lg">{{ $house->city }}</p>
+                                            <p class="text-sm mt-2 font-bold">Powierzchnia: {{ $house->area }}
                                                 m<sup>2</sup></p>
-                                            <p class="text-sm mt-2 italic">Cena: {{ $flat->price }} PLN</p>
+                                            <p class="text-sm mt-2 italic">Cena: {{ $house->price }} PLN</p>
 
                                             @if(Auth::guest())
-                                                <a href="{{ route('flats.show', $flat->id) }}">
+                                                <a href="{{ route('houses.show', $house->id) }}">
                                                     <button
                                                         class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                                                         <span class="inline-block mx-2">Szczegóły >></span>
                                                     </button>
                                                 </a>
                                             @else
-                                                <a href="{{ route('flats.edit', $flat->id) }}">
+                                                <a href="{{ route('houses.edit', $house->id) }}">
                                                     <button
-                                                        class="transition duration-200 bg-green-500 mt-4 hover:bg-green-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                                                        class="transition duration-200 bg-green-500 mt-4 hover:bg-green-600 focus:bg-green-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                                                         <span class="inline-block mx-2">Edytuj</span>
                                                     </button>
                                                 </a>
-                                                <a href="{{ route('flats.delete', $flat->id) }}">
+                                                <a href="{{ route('houses.delete', $house->id) }}">
                                                     @csrf
                                                     <button
-                                                        class="transition duration-200 bg-red-500 mt-4 hover:bg-red-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+                                                        class="transition duration-200 bg-red-500 mt-4 hover:bg-red-600 focus:bg-red-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                                                         <span class="inline-block mx-2">Usuń</span>
                                                     </button>
                                                 </a>
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                         <div class="p-6">
-{{--                            {{ $flats->links() }}--}}
+                            {{ $houses->links() }}
                         </div>
                     </div>
                 </div>
@@ -96,5 +96,6 @@
     </div>
 
 </x-app-layout>
+
 
 

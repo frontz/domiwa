@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\FilterController;
 use App\Http\Controllers\FlatController;
+use App\Http\Controllers\HouseController;
 use App\Http\Controllers\PremisesController;
 use App\Http\Controllers\ReadXmlController;
 use App\Http\Controllers\UserController;
@@ -91,6 +93,14 @@ Route::post('/flats/store', [FlatController::class, 'store'])->middleware('auth'
 Route::get('/flats/show/{flat}', [FlatController::class, 'show'])->name('flats.show');
 Route::get('/flats/delete/{flat}', [FlatController::class, 'destroy'])->middleware('auth')->name('flats.delete');
 
+Route::get('/houses', [HouseController::class, 'index'])->name('houses.index');
+Route::get('/houses/create', [HouseController::class, 'create'])->middleware('auth')->name('houses.create');
+Route::post('/houses/update/{house}', [HouseController::class, 'update'])->middleware('auth')->name('houses.update');
+Route::get('/houses/edit/{house}', [HouseController::class, 'edit'])->middleware('auth')->name('houses.edit');
+Route::post('/houses/store', [HouseController::class, 'store'])->middleware('auth')->name('houses.store');
+Route::get('/houses/show/{house}', [HouseController::class, 'show'])->name('houses.show');
+Route::get('/houses/delete/{house}', [HouseController::class, 'destroy'])->middleware('auth')->name('houses.delete');
+
 Route::get('/premises', [PremisesController::class, 'index'])->name('premises.index');
 Route::get('/premises/create', [PremisesController::class, 'create'])->middleware('auth')->name('premises.create');
 Route::post('/premises/update/{premises}', [PremisesController::class, 'update'])->middleware('auth')->name('premises.update');
@@ -98,6 +108,8 @@ Route::get('/premises/edit/{premises}', [PremisesController::class, 'edit'])->mi
 Route::post('/premises/store', [PremisesController::class, 'store'])->middleware('auth')->name('premises.store');
 Route::get('/premises/show/{premises}', [PremisesController::class, 'show'])->name('premises.show');
 Route::get('/premises/delete/{premises}', [PremisesController::class, 'destroy'])->middleware('auth')->name('premises.delete');
+
+Route::post('/offers/filtered', [FilterController::class, 'filter'])->name('offers.filtered');
 
 Route::get('/downloadxml', [DownloadXmlFile::class, 'downloadXmlFile'])->name('downloadxml');
 

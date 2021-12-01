@@ -19,9 +19,20 @@
                                            placeholder="Nr" value="{{ old('id') }}" required/>
                                 </div>
                                 <div class="sm:col-span-2">
+                                    <select name="market"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Rynek *</option>
+                                        <option value="Pierwotny">Pierwotny</option>
+                                        <option value="Wtórny">Wtórny</option>
+                                    </select>
+                                    @error('market')
+                                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="sm:col-span-2">
                                     <select name="status"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Status</option>
+                                        <option value="" style="display: none">Status *</option>
                                         <option value="Aktualna">Aktualna</option>
                                         <option value="Zamknięta">Zamknięta</option>
                                     </select>
@@ -45,7 +56,10 @@
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="sm:col-span-2">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
+                                <div class="sm:col-span-3">
                                     <input type="text" name="commune"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Gmina *" value="{{ old('commune') }}"/>
@@ -53,9 +67,6 @@
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-3">
                                     <input type="text" name="city"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
@@ -80,7 +91,7 @@
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="sm:col-span-3">
+                                <div class="sm:col-span-2">
                                     <input type="number" step="1" min="0" name="price"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Cena *" value="{{ old('price') }}"/>
@@ -88,9 +99,6 @@
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2">
                                     <input type="number" step="1" min="0" name="rooms_nr"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
@@ -99,7 +107,7 @@
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="sm:col-span-5">
+                                <div class="sm:col-span-8">
                                     <input type="text" name="title"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Tytuł w internecie *"/>
@@ -107,15 +115,13 @@
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="sm:col-span-2" style="display: none">
-                                    <input type="text" name="market"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           value="secondary"/>
-                                </div>
-                                <div class="sm:col-span-5">
-                                <textarea name="description"
-                                          class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                          placeholder="Opis ogólny *" value="{{ old('description') }}"></textarea>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
+                                <div class="sm:col-span-12">
+                                    <textarea name="description"
+                                              class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                              placeholder="Opis ogólny *" value="{{ old('description') }}"></textarea>
                                     @error('description')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
@@ -371,7 +377,7 @@
                             </div>
 
                             <div class="gap-6 py-5 px-1">
-                                <button
+                                <button type="submit"
                                     class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                                     <span class="inline-block mx-2">Dodaj mieszkanie</span>
                                 </button>
