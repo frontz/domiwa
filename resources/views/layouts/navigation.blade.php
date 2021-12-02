@@ -108,6 +108,7 @@
                                 <a href="{{ route('flats.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Mieszkanie - sprzedaż</a>
                                 <a href="{{ route('houses.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Dom - sprzedaż</a>
                                 <a href="{{ route('premises.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Lokal - sprzedaż</a>
+                                <a href="{{ route('plots.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Działka - sprzedaż</a>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <a href="#" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" onclick="event.preventDefault(); this.closest('form').submit();">Wyloguj</a>

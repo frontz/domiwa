@@ -3,6 +3,7 @@
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\FlatController;
 use App\Http\Controllers\HouseController;
+use App\Http\Controllers\PlotController;
 use App\Http\Controllers\PremisesController;
 use App\Http\Controllers\ReadXmlController;
 use App\Http\Controllers\UserController;
@@ -108,6 +109,14 @@ Route::get('/premises/edit/{premises}', [PremisesController::class, 'edit'])->mi
 Route::post('/premises/store', [PremisesController::class, 'store'])->middleware('auth')->name('premises.store');
 Route::get('/premises/show/{premises}', [PremisesController::class, 'show'])->name('premises.show');
 Route::get('/premises/delete/{premises}', [PremisesController::class, 'destroy'])->middleware('auth')->name('premises.delete');
+
+Route::get('/plots', [PlotController::class, 'index'])->name('plots.index');
+Route::get('/plots/create', [PlotController::class, 'create'])->middleware('auth')->name('plots.create');
+Route::post('/plots/update/{plot}', [PlotController::class, 'update'])->middleware('auth')->name('plots.update');
+Route::get('/plots/edit/{plot}', [PlotController::class, 'edit'])->middleware('auth')->name('plots.edit');
+Route::post('/plots/store', [PlotController::class, 'store'])->middleware('auth')->name('plots.store');
+Route::get('/plots/show/{plot}', [PlotController::class, 'show'])->name('plots.show');
+Route::get('/plots/delete/{plot}', [PlotController::class, 'destroy'])->middleware('auth')->name('plots.delete');
 
 Route::post('/offers/filtered', [FilterController::class, 'filter'])->name('offers.filtered');
 

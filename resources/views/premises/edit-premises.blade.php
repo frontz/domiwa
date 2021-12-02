@@ -18,6 +18,11 @@
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Nr" value="{{ $premises->id }}"/>
                                 </div>
+                                <div class="sm:col-span-2" style="display: none;">
+                                    <input type="number" name="id" 
+                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           placeholder="Nr" value="{{ $premises->id }}"/>
+                                </div>
                                 <div class="sm:col-span-2" style="display: none">
                                     <input type="number" name="id"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
