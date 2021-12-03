@@ -118,6 +118,11 @@ Route::post('/plots/store', [PlotController::class, 'store'])->middleware('auth'
 Route::get('/plots/show/{plot}', [PlotController::class, 'show'])->name('plots.show');
 Route::get('/plots/delete/{plot}', [PlotController::class, 'destroy'])->middleware('auth')->name('plots.delete');
 
+Route::get('/modal', function () {
+    return view('test-modal');
+})->name('modal');
+
+
 Route::post('/offers/filtered', [FilterController::class, 'filter'])->name('offers.filtered');
 
 Route::get('/downloadxml', [DownloadXmlFile::class, 'downloadXmlFile'])->name('downloadxml');
