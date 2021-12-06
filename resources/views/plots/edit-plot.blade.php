@@ -21,14 +21,14 @@
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" name="id"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Nr" value="{{ $plot->id }}" required/>
                                 </div>
 
                                 <div class="sm:col-span-2">
                                     <select name="status"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Status *</option>
+                                        <option value="" disabled>Status *</option>
                                         <option value="Aktualna" @if ($plot->status === 'Aktualna') { selected } @endif>
                                             Aktualna
                                         </option>
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="voivodeship"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Województwo *" value="{{ $plot->voivodeship }}"/>
                                     @error('voivodeship')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="district"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Powiat *" value="{{ $plot->district }}"/>
                                     @error('district')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -61,7 +61,7 @@
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-3">
                                     <input type="text" name="commune"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Gmina *" value="{{ $plot->commune }}"/>
                                     @error('commune')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="city"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Miasto *" value="{{ $plot->city }}"/>
                                     @error('city')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="street"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Ulica *" value="{{ $plot->street }}"/>
                                     @error('street')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="number" step="0.5" min="0" name="area"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Powierzchnia *" value="{{ $plot->area }}"/>
                                     @error('area')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" step="1" min="0" name="price"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Cena *" value="{{ $plot->price }}"/>
                                     @error('price')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -102,7 +102,7 @@
 
                                 <div class="sm:col-span-8">
                                     <input type="text" name="title"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Tytuł w internecie *" value="{{ $plot->title }}"/>
                                     @error('title')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -113,7 +113,7 @@
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-12">
                                     <textarea name="description"
-                                              class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                              class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                               placeholder="Opis ogólny *">{{ $plot->description }}</textarea>
                                     @error('description')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -124,18 +124,18 @@
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2 text-gray-500">
                                     <input type="number" name="length"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Długość" value="{{ $plot->length }}"/>
                                 </div>
                                 <div class="sm:col-span-2 text-gray-500">
                                     <input type="number" name="width"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Szerokość" value="{{ $plot->width }}"/>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="type"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Typ działki</option>
+                                        <option value="" disabled>Typ działki</option>
                                         <option value="Budowlana-wielorodzinna"
                                                 @if ($plot->type === 'Budowlana-wielorodzinna') { selected } @endif>
                                             Budowlana-wielorodzinna
@@ -151,7 +151,7 @@
                                 <div class="sm:col-span-2">
                                     <select name="fence"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Ogrodzenie</option>
+                                        <option value="" disabled>Ogrodzenie</option>
                                         <option value="1" @if ($plot->fence === 1) { selected } @endif>Jest</option>
                                         <option value="0" @if ($plot->fence === 0) { selected } @endif>Nie ma</option>
                                     </select>
@@ -159,7 +159,7 @@
                                 <div class="sm:col-span-2">
                                     <select name="driveway"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Droga dojazdowa</option>
+                                        <option value="" disabled>Droga dojazdowa</option>
                                         <option value="Asfalt" @if ($plot->driveway === "Asfalt") { selected } @endif>
                                             Asfalt
                                         </option>

@@ -27,7 +27,7 @@ class CreateFlatsTable extends Migration
             $table->string('description', 500);
             $table->string('title', 250);
             $table->string('market', 20);
-            $table->integer('phone_nr')->nullable();
+            $table->integer('phones_nr')->nullable();
             $table->integer('floor')->nullable();
             $table->integer('floor_nr')->nullable();
             $table->integer('year_build')->nullable();

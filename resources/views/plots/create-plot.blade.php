@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="voivodeship"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Województwo *" value="{{ old('voivodeship') }}"/>
                                     @error('voivodeship')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="district"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Powiat *" value="{{ old('district') }}"/>
                                     @error('district')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -51,7 +51,7 @@
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-3">
                                     <input type="text" name="commune"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Gmina *" value="{{ old('commune') }}"/>
                                     @error('commune')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="city"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Miasto *" value="{{ old('city') }}"/>
                                     @error('city')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="street"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Ulica *" value="{{ old('street') }}"/>
                                     @error('street')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -75,7 +75,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="number" step="0.5" min="0" name="area"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Powierzchnia *" value="{{ old('area') }}"/>
                                     @error('area')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" step="1" min="0" name="price"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Cena *" value="{{ old('price') }}"/>
                                     @error('price')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -92,7 +92,7 @@
 
                                 <div class="sm:col-span-8">
                                     <input type="text" name="title"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Tytuł w internecie *"/>
                                     @error('title')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -103,8 +103,8 @@
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-12">
                                     <textarea name="description"
-                                              class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                              placeholder="Opis ogólny *" value="{{ old('description') }}"></textarea>
+                                              class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                              placeholder="Opis ogólny *">{{ old('description') }}</textarea>
                                     @error('description')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
@@ -114,21 +114,21 @@
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2 text-gray-500">
                                     <input type="number" name="length"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Długość" value="{{ old('length') }}"/>
                                 </div>
                                 <div class="sm:col-span-2 text-gray-500">
                                     <input type="number" name="width"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Szerokość" value="{{ old('width') }}"/>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="type"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">Typ działki</option>
-                                        <option value="budowlana-wielorodzinna">budowlana-wielorodzinna</option>
-                                        <option value="rekraacyjna">rekreacyjna</option>
-                                        <option value="uprawna">uprawna</option>
+                                        <option value="Budowlana-wielorodzinna">Budowlana-wielorodzinna</option>
+                                        <option value="Rekraacyjna">Rekreacyjna</option>
+                                        <option value="Uprawna">Uprawna</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
@@ -163,8 +163,8 @@
                                     <select name="property_form"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">Typ własności</option>
-                                        <option value="własność">własność</option>
-                                        <option value="dzierżawa">dzierżawa</option>
+                                        <option value="Własność">Własność</option>
+                                        <option value="Dzierżawa">Dzierżawa</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-3">

@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="voivodeship"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Województwo *" value="{{ old('voivodeship') }}"/>
                                     @error('voivodeship')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="district"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Powiat *" value="{{ old('district') }}"/>
                                     @error('district')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -61,7 +61,7 @@
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-3">
                                     <input type="text" name="commune"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Gmina *" value="{{ old('commune') }}"/>
                                     @error('commune')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="city"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Miasto *" value="{{ old('city') }}"/>
                                     @error('city')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="street"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Ulica *" value="{{ old('street') }}"/>
                                     @error('street')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="number" step="0.5" min="0" name="area"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Powierzchnia *" value="{{ old('area') }}"/>
                                     @error('area')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" step="1" min="0" name="price"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Cena *" value="{{ old('price') }}"/>
                                     @error('price')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -101,7 +101,7 @@
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" step="1" min="0" name="rooms_nr"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Liczba pokoi *" value="{{ old('rooms_nr') }}"/>
                                     @error('rooms_nr')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -109,7 +109,7 @@
                                 </div>
                                 <div class="sm:col-span-8">
                                     <input type="text" name="title"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Tytuł w internecie *"/>
                                     @error('title')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -120,7 +120,7 @@
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-12">
                                     <textarea name="description"
-                                              class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                              class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                               placeholder="Opis ogólny *" value="{{ old('description') }}"></textarea>
                                     @error('description')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -130,16 +130,16 @@
 
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2">
-                                    <input type="number" name="phone_nr"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Liczba telefonów" value="{{ old('phone_nr') }}"/>
+                                    <input type="number" name="phones_nr"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           placeholder="Liczba telefonów" value="{{ old('phones_nr') }}"/>
                                     @error('city')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" name="floor" step="1" min="0"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Piętro" value="{{ old('floor') }}"/>
                                     @error('floor')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -147,7 +147,7 @@
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" name="floor_nr" step="1" min="0"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Liczba pięter" value="{{ old('floor_nr') }}"/>
                                     @error('floor_nr')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" name="year_build" step="1" min="1900"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Rok budowy" value="{{ old('year_build') }}"/>
                                     @error('year_build')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -165,25 +165,25 @@
                                     <div style="display: inline-block"><p>Typ kuchni:</p></div>
                                     <div style="display: inline-block" class="text-sm">
 
-                                        <input type="checkbox" name="kitchen_type[]" value="z aneksem"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                        <input type="checkbox" name="kitchen_type[]" value="Z aneksem"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('kitchen_type') }}"/>
-                                        <label for="kitchen_type">z aneksem</label>
+                                        <label for="kitchen_type">Z aneksem</label>
 
-                                        <input type="checkbox" name="kitchen_type[]" value="widna"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                        <input type="checkbox" name="kitchen_type[]" value="Widna"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('kitchen_type') }}"/>
-                                        <label for="kitchen_type">widna</label>
+                                        <label for="kitchen_type">Widna</label>
 
-                                        <input type="checkbox" name="kitchen_type[]" value="z oknem"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                        <input type="checkbox" name="kitchen_type[]" value="Z oknem"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('kitchen_type') }}"/>
-                                        <label for="kitchen_type">z oknem</label>
+                                        <label for="kitchen_type">Z oknem</label>
 
-                                        <input type="checkbox" name="kitchen_type[]" value="zamknięta"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                        <input type="checkbox" name="kitchen_type[]" value="Zamknięta"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('kitchen_type') }}"/>
-                                        <label for="kitchen_type">zamknięta</label>
+                                        <label for="kitchen_type">Zamknięta</label>
                                     </div>
                                 </div>
                             </div>
@@ -193,21 +193,21 @@
                                     <div style="display: inline-block"><p>Media:</p></div>
                                     <div style="display: inline-block" class="text-sm">
                                         <input type="checkbox" name="media[]" value="Światłowód"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('Światłowód') }}"/>
                                         <label for="kitchen_type">Światłowód</label>
                                         <input type="checkbox" name="media[]" value="TV kablowa"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('TV kablowa') }}"/>
                                         <label for="kitchen_type">TV kablowa</label>
                                         <input type="checkbox" name="media[]" value="Internet"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('Internet') }}"/>
                                         <label for="kitchen_type">Internet</label>
                                         <input type="checkbox" name="media[]" value="Klimatyzacja"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                value="{{ old('Klimatyzacja') }}"/>
-                                        <label for="kitchen_type">klimatyzacja</label>
+                                        <label for="kitchen_type">Klimatyzacja</label>
                                     </div>
                                 </div>
                             </div>
@@ -218,21 +218,21 @@
                                     <select name="heating"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">Ogrzewanie</option>
-                                        <option value="miejskie">miejskie</option>
+                                        <option value="Miejskie">Miejskie</option>
                                         <option value="CO z własnej kotłowni">CO z własnej kotłowni</option>
-                                        <option value="gazowe">gazowe</option>
-                                        <option value="inne">inne</option>
-                                        <option value="brak">brak</option>
+                                        <option value="Gazowe">Gazowe</option>
+                                        <option value="Inne">Inne</option>
+                                        <option value="Brak">Brak</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="parking"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">M-ce parkingowe</option>
-                                        <option value="garaż podziemny">garaż podziemny</option>
-                                        <option value="garaż wolnostojący">garaż wolnostojący</option>
-                                        <option value="przy ulicy">przy ulicy</option>
-                                        <option value="brak">brak</option>
+                                        <option value="Garaż podziemny">Garaż podziemny</option>
+                                        <option value="Garaż wolnostojący">Garaż wolnostojący</option>
+                                        <option value="Przy ulicy">Przy ulicy</option>
+                                        <option value="Brak">Brak</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
@@ -306,11 +306,11 @@
                                     <select name="condition"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
                                         <option value="" style="display: none">Stan lokalu</option>
-                                        <option value="nowy">nowy</option>
-                                        <option value="bardzo dobry">bardzo dobry</option>
-                                        <option value="do odświerzenia">do odświerzenia</option>
-                                        <option value="do remontu">do remontu</option>
-                                        <option value="do wykończenia">do wykończenia</option>
+                                        <option value="Nowy">Nowy</option>
+                                        <option value="Bardzo dobry">Bardzo dobry</option>
+                                        <option value="Do odświerzenia">Do odświerzenia</option>
+                                        <option value="Do remontu">Do remontu</option>
+                                        <option value="Do wykończenia">Do wykończenia</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">

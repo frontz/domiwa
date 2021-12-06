@@ -13,33 +13,37 @@
                         <form action="{{ route('flats.update', $flat->id) }}" method="post"
                               enctype="multipart/form-data">
                             @csrf
-
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2">
-                                    <input type="number" disabled
+                                    <input type="number" name="id" disabled
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           value="{{ $flat->id }}"/>
+                                           placeholder="Nr" value="{{ old('id') }}" required/>
                                 </div>
-                                <div class="sm:col-span-2" style="display: none">
-                                    <input type="number" name="id"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           value="{{ $flat->id }}"/>
+                                <div class="sm:col-span-2">
+                                    <select name="market"
+                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
+                                        <option value="" style="display: none">Rynek *</option>
+                                        <option value="Pierwotny" @if($flat->market === "Pierwotny") { selected } @endif>Pierwotny</option>
+                                        <option value="Wtórny" @if($flat->market === "Wtórny") { selected } @endif>Wtórny</option>
+                                    </select>
+                                    @error('market')
+                                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="status"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Status</option>
-                                        <option value="Aktualna" @if ($flat->status === 'Aktualna') { selected } @endif>
-                                            Aktualna
-                                        </option>
-                                        <option value="Zamknięta" @if ($flat->status === 'Zamknięta') { selected
-                                                } @endif>Zamknięta
-                                        </option>
+                                        <option value="" style="display: none">Status *</option>
+                                        <option value="Aktualna" @if($flat->status === "Aktualna") { selected } @endif>Aktualna</option>
+                                        <option value="Zamknięta" @if($flat->status === "Zamknięta") { selected } @endif>Zamknięta</option>
                                     </select>
+                                    @error('status')
+                                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="voivodeship"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Województwo *" value="{{ $flat->voivodeship }}"/>
                                     @error('voivodeship')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -47,17 +51,9 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="district"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Powiat *" value="{{ $flat->district }}"/>
                                     @error('district')
-                                    <p class="text-red-500 text-sm">{{ $message }}</p>
-                                    @enderror
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <input type="text" name="commune"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Gmina *" value="{{ $flat->commune }}"/>
-                                    @error('commune')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -65,8 +61,16 @@
 
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-3">
+                                    <input type="text" name="commune"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           placeholder="Gmina *" value="{{ $flat->commune }}"/>
+                                    @error('commune')
+                                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="sm:col-span-3">
                                     <input type="text" name="city"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Miasto *" value="{{ $flat->city }}"/>
                                     @error('city')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -74,70 +78,70 @@
                                 </div>
                                 <div class="sm:col-span-3">
                                     <input type="text" name="street"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Ulica *" value="{{ $flat->street }}"/>
                                     @error('street')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="sm:col-span-3">
-                                    <input type="number" step="0.5" name="area"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                    <input type="number" step="0.5" min="0" name="area"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Powierzchnia *" value="{{ $flat->area }}"/>
                                     @error('area')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="sm:col-span-3">
-                                    <input type="number" step="1" name="price"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                <div class="sm:col-span-2">
+                                    <input type="number" step="1" min="0" name="price"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Cena *" value="{{ $flat->price }}"/>
                                     @error('price')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2">
-                                    <input type="number" name="rooms_nr"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                    <input type="number" step="1" min="0" name="rooms_nr"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Liczba pokoi *" value="{{ $flat->rooms_nr }}"/>
-                                    @error('room_nr')
+                                    @error('rooms_nr')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="sm:col-span-5">
+                                <div class="sm:col-span-8">
                                     <input type="text" name="title"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Tytuł w internecie *" value="{{ $flat->title }}"/>
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           placeholder="Tytuł w internecie *"/>
                                     @error('title')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
+                            </div>
 
-                                <div class="sm:col-span-5">
-                                <textarea name="description"
-                                          class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                          placeholder="Opis ogólny *">{{ $flat->description }}</textarea>
-                                    @error('street')
+                            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
+                                <div class="sm:col-span-12">
+                                    <textarea name="description"
+                                              class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                              placeholder="Opis ogólny *">{{ $flat->description }}</textarea>
+                                    @error('description')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
 
+
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2">
-                                    <input type="number" name="phone_nr"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Liczba telefonów" value="{{ $flat->phone_nr }}"/>
-                                    @error('city')
+                                    <input type="number" name="phones_nr"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           placeholder="Liczba telefonów" value="{{ $flat->phones_nr }}"/>
+                                    @error('phones_nr')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" name="floor" step="1"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Piętro" value="{{ $flat->floor }}"/>
                                     @error('floor')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -145,7 +149,7 @@
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" name="floor_nr" step="1"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Liczba pięter" value="{{ $flat->floor_nr }}"/>
                                     @error('floor_nr')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -153,7 +157,7 @@
                                 </div>
                                 <div class="sm:col-span-2">
                                     <input type="number" name="year_build" step="1"
-                                           class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
+                                           class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
                                            placeholder="Rok budowy" value="{{ $flat->year_build }}"/>
                                     @error('year_build')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -164,44 +168,44 @@
                                     <div style="display: inline-block"><p>Typ kuchni:</p></div>
                                     <div style="display: inline-block" class="text-sm">
 
-                                        <input type="checkbox" name="kitchen_type[]" value="z aneksem"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                        <input type="checkbox" name="kitchen_type[]" value="Z aneksem"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                @if(is_array(json_decode($flat->kitchen_type))) {
                                                @foreach(json_decode($flat->kitchen_type) as $kitchen_type)
-                                               @if($kitchen_type === 'z aneksem') { checked } @endif
+                                               @if($kitchen_type === 'Z aneksem') { checked } @endif
                                                @endforeach }
                                             @endif
                                         />
                                         <label for="kitchen_type">z aneksem</label>
 
-                                        <input type="checkbox" name="kitchen_type[]" value="widna"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                        <input type="checkbox" name="kitchen_type[]" value="Widna"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                @if(is_array(json_decode($flat->kitchen_type))) {
                                                @foreach(json_decode($flat->kitchen_type) as $kitchen_type)
-                                               @if($kitchen_type === 'widna') { checked } @endif
+                                               @if($kitchen_type === 'Widna') { checked } @endif
                                                @endforeach }
                                             @endif
                                         />
-                                        <label for="kitchen_type">widna</label>
+                                        <label for="kitchen_type">Widna</label>
 
-                                        <input type="checkbox" name="kitchen_type[]" value="z oknem"
+                                        <input type="checkbox" name="kitchen_type[]" value="Z oknem"
                                                @if(is_array(json_decode($flat->kitchen_type))) {
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                @foreach(json_decode($flat->kitchen_type) as $kitchen_type)
-                                               @if($kitchen_type === 'ciemna') { checked } @endif
+                                               @if($kitchen_type === 'Ciemna') { checked } @endif
                                                @endforeach }
                                         @endif
-                                        <label for="kitchen_type">z oknem</label>
+                                        <label for="kitchen_type">Z oknem</label>
 
-                                        <input type="checkbox" name="kitchen_type[]" value="zamknięta"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                        <input type="checkbox" name="kitchen_type[]" value="Zamknięta"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                @if(is_array(json_decode($flat->kitchen_type))) {
                                                @foreach(json_decode($flat->kitchen_type) as $kitchen_type)
-                                               @if($kitchen_type === 'zamknięta') { checked } @endif }
+                                               @if($kitchen_type === 'Zamknięta') { checked } @endif }
                                                @endforeach }
                                             @endif
                                         />
-                                        <label for="kitchen_type">zamknięta</label>
+                                        <label for="kitchen_type">Zamknięta</label>
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +215,7 @@
                                     <div style="display: inline-block"><p>Media:</p></div>
                                     <div style="display: inline-block" class="text-sm">
                                         <input type="checkbox" name="media[]" value="Światłowód"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                @if(is_array(json_decode($flat->media))) {
                                                @foreach(json_decode($flat->media) as $media)
                                                @if($media === 'Światłowód') { checked } @endif
@@ -221,7 +225,7 @@
                                         <label for="kitchen_type">Światłowód</label>
 
                                         <input type="checkbox" name="media[]" value="TV kablowa"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                @if(is_array(json_decode($flat->media))) {
                                                @foreach(json_decode($flat->media) as $media)
                                                @if($media === 'TV kablowa') { checked } @endif
@@ -231,7 +235,7 @@
                                         <label for="kitchen_type">TV kablowa</label>
 
                                         <input type="checkbox" name="media[]" value="Internet"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                @if(is_array(json_decode($flat->media))) {
                                                @foreach(json_decode($flat->media) as $media)
                                                @if($media === 'Internet') { checked } @endif
@@ -240,15 +244,15 @@
                                         />
                                         <label for="kitchen_type">Internet</label>
 
-                                        <input type="checkbox" name="media[]" value="klimatyzacja"
-                                               class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
+                                        <input type="checkbox" name="media[]" value="Klimatyzacja"
+                                               class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 ml-4 text-sm outline-none focus:shadow-outline"
                                                @if(is_array(json_decode($flat->media))) {
                                                @foreach(json_decode($flat->media) as $media)
-                                               @if($media === 'klimatyzacja') { checked } @endif
+                                               @if($media === 'Klimatyzacja') { checked } @endif
                                                @endforeach }
                                             @endif
                                         />
-                                        <label for="kitchen_type">klimatyzacja</label>
+                                        <label for="kitchen_type">Klimatyzacja</label>
                                     </div>
                                 </div>
                             </div>
@@ -258,38 +262,38 @@
                                 <div class="sm:col-span-2">
                                     <select name="heating"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Ogrzewanie</option>
-                                        <option value="miejskie" @if ($flat->heating === 'miejskie') { selected
-                                                } @endif>miejskie
+                                        <option value="" disabled>Ogrzewanie</option>
+                                        <option value="miejskie" @if ($flat->heating === 'Miejskie') { selected
+                                                } @endif>Miejskie
                                         </option>
                                         <option value="CO z własnej kotłowni"
                                                 @if ($flat->heating === 'CO z własnej kotłowni') { selected } @endif>CO
                                             z własnej kotłowni
                                         </option>
-                                        <option value="gazowe" @if ($flat->heating === 'gazowe') { selected } @endif>
-                                            gazowe
+                                        <option value="gazowe" @if ($flat->heating === 'Gazowe') { selected } @endif>
+                                            Gazowe
                                         </option>
-                                        <option value="inne" @if ($flat->heating === 'inne') { selected } @endif>inne
+                                        <option value="inne" @if ($flat->heating === 'Inne') { selected } @endif>Inne
                                         </option>
-                                        <option value="brak" @if ($flat->heating === 'brak') { selected } @endif>brak
+                                        <option value="brak" @if ($flat->heating === 'Brak') { selected } @endif>Brak
                                         </option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="parking"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">M-ce parkingowe</option>
+                                        <option value="" disabled>M-ce parkingowe</option>
                                         <option value="garaż podziemny" @if ($flat->parking === 'garaż podziemny') {
                                                 selected } @endif>garaż podziemny
                                         </option>
                                         <option value="garaż wolnostojący"
-                                                @if ($flat->parking === 'garaż wolnostojący') { selected } @endif>garaż
+                                                @if ($flat->parking === 'garaż wolnostojący') { selected } @endif>Garaż
                                             wolnostojący
                                         </option>
                                         <option value="przy ulicy" @if ($flat->parking === 'przy ulicy') { selected
-                                                } @endif>przy ulicy
+                                                } @endif>Przy ulicy
                                         </option>
-                                        <option value="brak" @if ($flat->parking === 'brak') { selected } @endif>brak
+                                        <option value="brak" @if ($flat->parking === 'brak') { selected } @endif>Brak
                                         </option>
                                     </select>
                                 </div>
@@ -297,7 +301,7 @@
                                     <div class="sm:col-span-2">
                                         <select name="furniture"
                                                 class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                            <option value="" style="display: none">Meble</option>
+                                            <option value="" disabled>Meble</option>
                                             <option value="1" @if ($flat->furniture === 1) { selected } @endif>Tak
                                             </option>
                                             <option value="0" @if ($flat->furniture === 0) { selected } @endif>Nie
@@ -308,7 +312,7 @@
                                 <div class="sm:col-span-2">
                                     <select name="lift"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Winda</option>
+                                        <option value="" disabled>Winda</option>
                                         <option value="1" @if ($flat->lift === 1) { selected } @endif>Tak</option>
                                         <option value="0" @if ($flat->lift === 1) { selected } @endif>Nie</option>
                                     </select>
@@ -316,7 +320,7 @@
                                 <div class="sm:col-span-2">
                                     <select name="attic"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Na poddaszu</option>
+                                        <option value="" disabled>Na poddaszu</option>
                                         <option value="1" @if ($flat->attic === 1) { selected } @endif>Tak</option>
                                         <option value="0" @if ($flat->attic === 1) { selected } @endif>Nie</option>
                                     </select>
@@ -324,7 +328,7 @@
                                 <div class="sm:col-span-2">
                                     <select name="two_levels"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Dwupoziomowe</option>
+                                        <option value="" disabled>Dwupoziomowe</option>
                                         <option value="1" @if ($flat->two_levels === 1) { selected } @endif>Tak</option>
                                         <option value="0" @if ($flat->two_levels === 1) { selected } @endif>Nie</option>
                                     </select>
@@ -337,7 +341,7 @@
                                     <div class="sm:col-span-2">
                                         <select name="balcony"
                                                 class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                            <option value="" style="display: none">Balkon</option>
+                                            <option value="" disabled>Balkon</option>
                                             <option value="Balkon" @if ($flat->balcony === 'Balkon') { selected
                                                     } @endif>Balkon
                                             </option>
@@ -356,7 +360,7 @@
                                 <div class="sm:col-span-2">
                                     <select name="basement"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Piwnica</option>
+                                        <option value="" disabled>Piwnica</option>
                                         <option value="Piwnica" @if ($flat->basement === 'Piwnica') { selected } @endif>
                                             Piwnica
                                         </option>
@@ -371,7 +375,7 @@
                                 <div class="sm:col-span-2">
                                     <select name="fitted_kitchen"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Kuchnia wyposaż.</option>
+                                        <option value="" disabled>Kuchnia wyposaż.</option>
                                         <option value="1" @if ($flat->fitted_kitchen === 1) { selected } @endif>Tak
                                         </option>
                                         <option value="0" @if ($flat->fitted_kitchen === 0) { selected } @endif>Nie
@@ -381,28 +385,28 @@
                                 <div class="sm:col-span-2">
                                     <select name="condition"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Stan lokalu</option>
+                                        <option value="" disabled>Stan lokalu</option>
                                         <option value="nowy" @if ($flat->condition === 'nowy') { selected } @endif>
-                                            nowy
+                                            Nowy
                                         </option>
                                         <option value="bardzo dobry" @if ($flat->condition === 'bardzo dobry') {
-                                                selected } @endif>bardzo dobry
+                                                selected } @endif>Bardzo dobry
                                         </option>
                                         <option value="do odświerzenia" @if ($flat->condition === 'do odświerzenia') {
-                                                selected } @endif>do odświerzenia
+                                                selected } @endif>Do odświerzenia
                                         </option>
                                         <option value="do remontu" @if ($flat->condition === 'do remontu') { selected
-                                                } @endif>do remontu
+                                                } @endif>Do remontu
                                         </option>
                                         <option value="do wykończenia" @if ($flat->condition === 'do wykończenia') {
-                                                selected } @endif>do wykończenia
+                                                selected } @endif>Do wykończenia
                                         </option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="closed_estate"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Osiedle zamknięte</option>
+                                        <option value="" disabled>Osiedle zamknięte</option>
                                         <option value="1" @if ($flat->closed_estate === 1) { selected } @endif>Tak
                                         </option>
                                         <option value="0" @if ($flat->closed_estate === 0) { selected } @endif>Nie
@@ -412,7 +416,7 @@
                                 <div class="sm:col-span-2">
                                     <select name="exclusivity"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Na wyłączność</option>
+                                        <option value="" disabled>Na wyłączność</option>
                                         <option value="1" @if ($flat->exclusivity === 1) { selected } @endif>Tak
                                         </option>
                                         <option value="0" @if ($flat->exclusivity === 0) { selected } @endif>Nie
@@ -425,7 +429,7 @@
                                 <div class="sm:col-span-2">
                                     <select name="without_commission"
                                             class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline">
-                                        <option value="" style="display: none">Bez prowizji</option>
+                                        <option value="" disabled>Bez prowizji</option>
                                         <option value="1" @if ($flat->without_commission === 1) { selected } @endif>
                                             Tak
                                         </option>

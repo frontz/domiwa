@@ -57,7 +57,7 @@
                                             <p class="text-sm mt-2 text-lg">{{ $flat->city }}</p>
                                             <p class="text-sm mt-2 font-bold">Powierzchnia: {{ $flat->area }}
                                                 m<sup>2</sup></p>
-                                            <p class="text-sm mt-2 italic">Cena: {{ $flat->price }} PLN</p>
+                                            <p class="text-sm mt-2 italic">Cena: {{ number_format($flat->price, 0 , ',', ' ') }} PLN</p>
 
                                             @if(Auth::guest())
                                                 <a href="{{ route('flats.show', $flat->id) }}">

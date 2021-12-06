@@ -72,7 +72,7 @@ class FlatController extends Controller
         $flat->title = $request->input('title');
         $flat->description = $request->input('description');
         $flat->market = $request->input('market');
-        $flat->phone_nr = $request->input('phone_nr');
+        $flat->phones_nr = $request->input('phones_nr');
         $flat->floor = $request->input('floor');
         $flat->floor_nr = $request->input('floor_nr');
         $flat->year_build = $request->input('year_build');
@@ -173,7 +173,7 @@ class FlatController extends Controller
         $flat->title = $request->input('title');
         $flat->description = $request->input('description');
         $flat->market = $request->input('market');
-        $flat->phone_nr = $request->input('phone_nr');
+        $flat->phones_nr = $request->input('phones_nr');
         $flat->floor = $request->input('floor');
         $flat->floor_nr = $request->input('floor_nr');
         $flat->year_build = $request->input('year_build');
@@ -223,7 +223,7 @@ class FlatController extends Controller
                     'rooms_nr' => $flat->rooms_nr,
                     'market' => $flat->market,
                     'description' => $flat->description,
-                    'phone_nr' => $flat->phone_nr,
+                    'phones_nr' => $flat->phones_nr,
                     'floor' => $flat->floor,
                     'floor_nr' => $flat->floor_nr,
                     'year_build' => $flat->year_build,

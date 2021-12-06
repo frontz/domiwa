@@ -209,7 +209,10 @@
                                 @endif
                                 <div class="py-1">
                                     Kontakt do pośrednika:<br>
-                                    tel: <b>{{ $flat->broker_phone }}</b>, mail: <b>{{ $flat->broker_email }}</b>
+                                    @if(isset($flat->broker_phone))
+                                    tel: <b>{{ $flat->broker_phone }}</b>,
+                                    @endif
+                                    mail: <b>biuro@domiwa.nieruchomosci.pl</b>
                                 </div>
                             </div>
                         </div>

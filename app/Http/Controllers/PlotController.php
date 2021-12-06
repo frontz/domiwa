@@ -92,12 +92,14 @@ class PlotController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Plot $plot
+     * @return View
      */
-    public function show($id)
+    public function show(Plot $plot): View
     {
-        //
+        return view('plots.show', [
+            'plot' => $plot
+        ]);
     }
 
     /**
@@ -182,7 +184,7 @@ class PlotController extends Controller
                         'title' => $plot->title,
                         'length' => $plot->length,
                         'width' => $plot->width,
-                        'type' => $plot->width,
+                        'type' => $plot->type,
                         'fence' => $plot->fence,
                         'driveway' => $plot->driveway,
                         'exclusivity' => $plot->exclusivity,

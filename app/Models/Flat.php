@@ -21,7 +21,7 @@ class Flat extends Model
         'description',
         'title',
         'market',
-        'phone_nr',
+        'phones_nr',
         'floor_nr',
         'year_build',
         'kitchen_type',
