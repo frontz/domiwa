@@ -21,9 +21,11 @@ class FlatController extends Controller
      */
     public function index(Request $request)
     {
+        $data = $request->all();
         $paginator = $request->input('paginator');
+        $flats = Flat::paginate($paginator);
         return view('flats.index', [
-            'flats' => Flat::paginate($paginator)
+            'flats' => $flats, 'next_query' => $data
         ]);
     }
 

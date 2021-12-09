@@ -13,35 +13,15 @@
                         <div class="w-full p-4 float-right">
                             @include('layouts.flash-message')
                             @include('layouts.filter')
-                            <form action="{{ route('plots.index') }}" method="POST">
-                                @csrf
-                                <button type="submit" name="paginator"
-                                        class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500
-                                focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block float-right"
-                                        value="1">
-                                    <span class="inline-block mx-2">12</span>
-                                </button>
-                                <button type="submit" name="paginator"
-                                        class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500
-                                focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block float-right mr-2"
-                                        value="2">
-                                    <span class="inline-block mx-2">24</span>
-                                </button>
-                                <button type="submit" name="paginator"
-                                        class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500
-                                focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block float-right mr-2"
-                                        value="1000">
-                                    <span class="inline-block mx-2">all</span>
-                                </button>
-                            </form>
                         </div>
 
                         <!-- component -->
                         <div class="flex w-screen">
-                            <!-- Resice the preview panel to check the responsiveness -->
-
-                            <!-- Component Start -->
-
+                            <div class="max-w-6xl">
+                                @if(sizeof($plots) === 0)
+                                    @include('layouts.nothing-found')
+                                @endif
+                            </div>
                             <div class="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 max-w-6xl">
                                 @foreach($plots as $plot)
                                     <div class="bg-gray-200 rounded-lg p-4 ml-4 text-center mb-4">
@@ -87,7 +67,7 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            {{ $plots->links() }}
+                            {{ $plots->appends($next_query)->links() }}
                         </div>
                     </div>
                 </div>

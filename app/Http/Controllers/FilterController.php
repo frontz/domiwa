@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Flat;
-use App\Models\House;
-use App\Models\Premises;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\View\View;
 
 class FilterController extends Controller
 {
@@ -24,6 +21,7 @@ class FilterController extends Controller
         $price_to = (int)$request->input('price_to');
         $area_from = (int)$request->input('area_from');
         $area_to = (int)$request->input('area_to');
+        $paginator = (int)$request->input('paginator');
         if ($property_type === 'Mieszkania') {
             $flats = DB::table('flats')
                 ->where('market', '=', $market_type)
@@ -31,10 +29,9 @@ class FilterController extends Controller
                 ->where('price', '<', $price_to)
                 ->where('area', '>', $area_from)
                 ->where('area', '<', $area_to)
-                ->paginate(3);
-            dump($flats);
+                ->paginate($paginator);
             return view('flats.index', [
-                'flats' => $flats
+                'flats' => $flats, 'next_query' => $request->all()
             ]);
         } elseif ($property_type === 'Domy') {
             $houses = DB::table('houses')
@@ -43,9 +40,9 @@ class FilterController extends Controller
                 ->where('price', '<', $price_to)
                 ->where('area', '>', $area_from)
                 ->where('area', '<', $area_to)
-                ->paginate(3);
+                ->paginate($paginator);
             return view('houses.index', [
-                'houses' => $houses->paginate(3)
+                'houses' => $houses, 'next_query' => $request->all()
             ]);
         } elseif ($property_type === 'Lokale') {
             $premises = DB::table('premises')
@@ -56,11 +53,21 @@ class FilterController extends Controller
                 ->where('area', '<', $area_to)
                 ->paginate(3);
             return view('premises.index', [
-                'premises' => $premises->paginate(3)
+                'premises' => $premises, 'next_query' => $request->all()
+            ]);
+        } elseif ($property_type === 'Działki') {
+            $plots = DB::table('plots')
+                ->where('price', '>', $price_from)
+                ->where('price', '<', $price_to)
+                ->where('area', '>', $area_from)
+                ->where('area', '<', $area_to)
+                ->paginate(3);
+            return view('plots.index', [
+                'plots' => $plots, 'next_query' => $request->all()
             ]);
         } else {
             return view('flats.index', [
-                'flats' => Flat::paginate(3)
+                'flats' => Flat::all()
             ]);
         }
     }

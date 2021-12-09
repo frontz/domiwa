@@ -1,6 +1,6 @@
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-gray-100 rounded-lg">
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg bg-gray-100">
-        <form method="post" action="{{ route('offers.filtered') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('search') }}" enctype="multipart/form-data">
             @csrf
             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                 <div class="sm:col-span-2">
@@ -19,6 +19,7 @@
                         <option value="Mieszkania">Mieszkania</option>
                         <option value="Domy">Domy</option>
                         <option value="Lokale">Lokale</option>
+                        <option value="Działki">Działki</option>
                     </select>
                 </div>
                 <div class="sm:col-span-2">
@@ -86,6 +87,18 @@
                             class="mt-6 transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                         <span class="inline-block mx-2">Szukaj</span>
                     </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
+                <div class="sm:col-span-10"></div>
+                <div class="sm:col-span-2">
+                    <label>Wyświetl na stronie</label>
+                    <select name="paginator"
+                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 text-sm w-full outline-none focus:shadow-outline">
+                        <option value="1">12</option>
+                        <option value="2">24</option>
+                        <option value="1000">Wszystkie</option>
+                    </select>
                 </div>
             </div>
         </form>

@@ -86,7 +86,11 @@ Route::get('/get-form', function () {
 
 Route::post('/get-form', [GetOfferForm::class, 'getForm'])->name('get-form');
 
-Route::post('/flats', [FlatController::class, 'index'])->name('flats.index');
+Route::any('/search', [FilterController::class, 'filter'])->name('search');
+
+Route::any('/flats', [FlatController::class, 'index'])->name('flats.index');
+Route::post('/flats', [FlatController::class, 'index'])->name('flats');
+Route::post('/flats', [FilterController::class, 'filter'])->name('flats');
 Route::get('/flats/create', [FlatController::class, 'create'])->middleware('auth')->name('flats.create');
 Route::post('/flats/update/{flat}', [FlatController::class, 'update'])->middleware('auth')->name('flats.update');
 Route::get('/flats/edit/{flat}', [FlatController::class, 'edit'])->middleware('auth')->name('flats.edit');
@@ -95,6 +99,7 @@ Route::get('/flats/show/{flat}', [FlatController::class, 'show'])->name('flats.s
 Route::get('/flats/delete/{flat}', [FlatController::class, 'destroy'])->middleware('auth')->name('flats.delete');
 
 Route::get('/houses', [HouseController::class, 'index'])->name('houses.index');
+Route::post('/houses', [HouseController::class, 'index'])->name('houses');
 Route::get('/houses/create', [HouseController::class, 'create'])->middleware('auth')->name('houses.create');
 Route::post('/houses/update/{house}', [HouseController::class, 'update'])->middleware('auth')->name('houses.update');
 Route::get('/houses/edit/{house}', [HouseController::class, 'edit'])->middleware('auth')->name('houses.edit');
@@ -103,6 +108,7 @@ Route::get('/houses/show/{house}', [HouseController::class, 'show'])->name('hous
 Route::get('/houses/delete/{house}', [HouseController::class, 'destroy'])->middleware('auth')->name('houses.delete');
 
 Route::get('/premises', [PremisesController::class, 'index'])->name('premises.index');
+Route::post('/premises', [PremisesController::class, 'index'])->name('premises');
 Route::get('/premises/create', [PremisesController::class, 'create'])->middleware('auth')->name('premises.create');
 Route::post('/premises/update/{premises}', [PremisesController::class, 'update'])->middleware('auth')->name('premises.update');
 Route::get('/premises/edit/{premises}', [PremisesController::class, 'edit'])->middleware('auth')->name('premises.edit');
