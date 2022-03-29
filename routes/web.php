@@ -31,8 +31,8 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::get('users/list',
-    [UserController::class, 'index'])
-    ->middleware(['auth'])->name('admins');
+    [UserController::class, 'index'])->name('admins');
+//    ->middleware(['auth']);
 
 Route::get('offers-management', function () {
     return view('components.get-offer-form');
