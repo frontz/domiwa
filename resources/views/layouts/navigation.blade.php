@@ -109,6 +109,10 @@
                                 <a href="{{ route('houses.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Dom - sprzedaż</a>
                                 <a href="{{ route('premises.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Lokal - sprzedaż</a>
                                 <a href="{{ route('plots.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Działka - sprzedaż</a>
+                                <a href="{{ route('flats-rent.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Mieszkanie - wynajem</a>
+                                <a href="{{ route('houses-rent.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Dom - wynajem</a>
+                                <a href="{{ route('premises-rent.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Lokal - wynajem</a>
+                                <a href="{{ route('plots-lease.create') }}" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" role="menuitem" tabindex="-1" id="menu-item-2">Działka - dzierżawa</a>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <a href="#" class="text-gray-300 hover:bg-blue-800 block px-4 py-2 rounded-md text-sm" onclick="event.preventDefault(); this.closest('form').submit();">Wyloguj</a>
