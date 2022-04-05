@@ -11,11 +11,11 @@ Route::any('/flats-rent', [FlatRentController::class, 'index'])->name('flats-ren
 Route::post('/flats-rent', [FlatRentController::class, 'index'])->name('flats-rent');
 Route::post('/flats-rent', [FilterController::class, 'filter'])->name('flats-rent');
 Route::get('/flats-rent/create', [FlatRentController::class, 'create'])->middleware('auth')->name('flats-rent.create');
-Route::post('/flats-rent/update/{flat}', [FlatRentController::class, 'update'])->middleware('auth')->name('flats-rent.update');
-Route::get('/flats-rent/edit/{flat}', [FlatRentController::class, 'edit'])->middleware('auth')->name('flats-rent.edit');
+Route::post('/flats-rent/update/{flatRent}', [FlatRentController::class, 'update'])->middleware('auth')->name('flats-rent.update');
+Route::get('/flats-rent/edit/{flatRent}', [FlatRentController::class, 'edit'])->middleware('auth')->name('flats-rent.edit');
 Route::post('/flats-rent/store', [FlatRentController::class, 'store'])->middleware('auth')->name('flats-rent.store');
-Route::get('/flats-rent/show/{flat}', [FlatRentController::class, 'show'])->name('flats-rent.show');
-Route::get('/flats-rent/delete/{flat}', [FlatRentController::class, 'destroy'])->middleware('auth')->name('flats-rent.delete');
+Route::get('/flats-rent/show/{flatRent}', [FlatRentController::class, 'show'])->name('flats-rent.show');
+Route::get('/flats-rent/delete/{flatRent}', [FlatRentController::class, 'destroy'])->middleware('auth')->name('flats-rent.delete');
 
 Route::any('/houses-rent', [HouseRentController::class, 'index'])->name('houses-rent.index');
 Route::post('/houses-rent', [HouseRentController::class, 'index'])->name('houses-rent');

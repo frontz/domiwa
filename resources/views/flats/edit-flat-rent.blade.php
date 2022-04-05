@@ -15,9 +15,9 @@
                             @csrf
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                                 <div class="sm:col-span-2">
-                                    <input type="number" name="id" disabled
+                                    <input type="number" name="id"
                                            class="border rounded-lg px-3 border border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Nr" value="{{ old('id') }}" required/>
+                                           placeholder="Nr" value="{{ $flatRent->id }}" required/>
                                 </div>
                                 <div class="sm:col-span-2">
                                     <select name="status"
@@ -100,7 +100,7 @@
                                 <div class="sm:col-span-8">
                                     <input type="text" name="title"
                                            class="border rounded-lg px-3 border text-gray-500 border-gray-400 py-2 mt-1 mb-2 text-sm w-full outline-none focus:shadow-outline"
-                                           placeholder="Tytuł w internecie *"/>
+                                           placeholder="Tytuł w internecie *" value="{{ $flatRent->title }}"/>
                                     @error('title')
                                     <p class="text-red-500 text-sm">{{ $message }}</p>
                                     @enderror
