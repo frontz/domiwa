@@ -100,9 +100,9 @@ class HouseController extends Controller
         $house->images = json_encode($images);
         try {
             $house->save();
-            return redirect(route('houses.index'))->with('success', 'Oferta została utworzona.');
+            return redirect(route('offers'))->with('success', 'Oferta została utworzona.');
         } catch (Exception $e) {
-            return redirect(route('houses.index'))->with('error', 'Coś poszło nie tak.');
+            return redirect(route('offers'))->with('error', 'Coś poszło nie tak.');
         }
     }
 

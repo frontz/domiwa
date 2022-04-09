@@ -18,14 +18,14 @@ Route::get('/flats-rent/show/{flatRent}', [FlatRentController::class, 'show'])->
 Route::get('/flats-rent/delete/{flatRent}', [FlatRentController::class, 'destroy'])->middleware('auth')->name('flats-rent.delete');
 
 Route::any('/houses-rent', [HouseRentController::class, 'index'])->name('houses-rent.index');
-Route::post('/houses-rent', [HouseRentController::class, 'index'])->name('houses-rent');
+Route::post('/houses-rent', [HouseRentController::class, 'index'])->name('houses-rent.store');
 Route::post('/houses-rent', [FilterController::class, 'filter'])->name('houses-rent');
 Route::get('/houses-rent/create', [HouseRentController::class, 'create'])->middleware('auth')->name('houses-rent.create');
-Route::post('/houses-rent/update/{house}', [HouseRentController::class, 'update'])->middleware('auth')->name('houses-rent.update');
-Route::get('/houses-rent/edit/{house}', [HouseRentController::class, 'edit'])->middleware('auth')->name('houses-rent.edit');
+Route::post('/houses-rent/update/{houseRent}', [HouseRentController::class, 'update'])->middleware('auth')->name('houses-rent.update');
+Route::get('/houses-rent/edit/{houseRent}', [HouseRentController::class, 'edit'])->middleware('auth')->name('houses-rent.edit');
 Route::post('/houses-rent/store', [HouseRentController::class, 'store'])->middleware('auth')->name('houses-rent.store');
-Route::get('/houses-rent/show/{house}', [HouseRentController::class, 'show'])->name('houses-rent.show');
-Route::get('/houses-rent/delete/{house}', [HouseRentController::class, 'destroy'])->middleware('auth')->name('houses-rent.delete');
+Route::get('/houses-rent/show/{houseRent}', [HouseRentController::class, 'show'])->name('houses-rent.show');
+Route::get('/houses-rent/delete/{houseRent}', [HouseRentController::class, 'destroy'])->middleware('auth')->name('houses-rent.delete');
 
 Route::any('/premises-rent', [PremisesRentController::class, 'index'])->name('premises-rent.index');
 Route::post('/premises-rent', [PremisesRentController::class, 'index'])->name('premises-rent');

@@ -86,11 +86,10 @@
     }
 </style>
 
-
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-blue-600 leading-tight">
-            {{ $flat->title }}
+            {{ $houseRent->title }}
         </h2>
     </x-slot>
 
@@ -102,117 +101,132 @@
                     <div class="bg-orange-200">
                         <!-- component -->
                         <div class="py-1 text-center">
-                            <span class="text-xl"><b>{{ $flat->title }}</b> - szczegóły oferty </span>
+                            <span class="text-xl"><b>{{ $houseRent->title }}</b> - szczegóły oferty </span>
                         </div>
                         <div class="py-1 text-center">
-                            <span class="italic">{{ $flat->description }}</span>
+                            <span class="italic">{{ $houseRent->description }}</span>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
                             <div class="sm:col-span-6">
                                 <div class="py-1">
-                                    <span>Województwo: {{ $flat->voivodeship }}, powiat: {{ $flat->district }},<br> gmina: {{$flat->commune }}, ulica: {{ $flat->street }}, miasto: <b>{{$flat->city}}</b></span>
+                                    <span>Województwo: {{ $houseRent->voivodeship }}, powiat: {{ $houseRent->district }},<br> gmina: {{$houseRent->commune }}, ulica: {{ $houseRent->street }}, miasto: <b>{{$houseRent->city}}</b></span>
                                 </div>
                                 <div class="py-1">
-                                    <span class="text-lg" style="display: inline-block;">Powierzchnia: <b>{{ $flat->area }} m<sup>2</sup></b></span></span>
+                                    <span class="text-lg" style="display: inline-block;">Powierzchnia: <b>{{ $houseRent->area }} m<sup>2</sup></b></span></span>
                                 </div>
                                 <div class="py-1">
-                                    <span class="text-lg">Cena: <b>{{ $flat->price }} PLN</b></span>
+                                    <span
+                                        class="text-lg">Cena: <b>{{ number_format($houseRent->price, 0 , ',', ' ') }} PLN</b></span>
                                 </div>
                                 <div class="py-1">
-                                    <span class="text-lg">Cena za m<sup>2</sup>: <b>{{ round($flat->price / $flat->area) }} PLN</b></span>
+                                    <span class="text-lg">Cena za m<sup>2</sup>: <b>{{ number_format($houseRent->price / $houseRent->area, 0, ',', ' ') }} PLN</b></span>
                                 </div>
                                 <div class="py-1">
-                                    <span>Liczba pokoi: <b>{{ $flat->rooms_nr }}</b></span>
+                                    <span>Liczba pokoi: <b>{{ $houseRent->rooms_nr }}</b></span>
                                 </div>
                                 <div class="py-1">
-                                    <span>Liczba telefonów: <b>{{ $flat->phone_nr }}</b></span>
+                                    <span>Liczba pomieszczeń: <b>{{ $houseRent->utility_rooms_nr }}</b></span>
                                 </div>
                                 <div class="py-1">
-                                    <span>Piętro: <b>{{ $flat->floor }}</b></span>
+                                    <span>Liczba pomieszczeń: <b>{{ $houseRent->bathrooms_nr }}</b></span>
                                 </div>
                                 <div class="py-1">
-                                    <span class="text-lg">Liczba pięter: <b>{{ $flat->floor_nr }}</b></span>
+                                    <span class="text-lg">Liczba pięter: <b>{{ $houseRent->floors_nr }}</b></span>
                                 </div>
                                 <div class="py-1">
-                                    <span class="text-lg">Rok budowy: <b>{{ $flat->year_build }}</b></span>
+                                    <span class="text-lg">Liczba pięter: <b>{{ $houseRent->floors_nr }}</b></span>
+                                </div>
+                                <div class="py-1">
+                                    <span class="text-lg">Typ budowy: <b>{{ $houseRent->building_type }}</b></span>
                                 </div>
                             </div>
 
                             <div class="sm:col-span-6">
-                                @if (is_array($flat->kitchen_type))
+
+                                @if ($houseRent->heating === 1)
                                     <div class="py-1">
-                                    <span>Kuchnia:
-                                            @foreach(json_decode($flat->kitchen_type) as $kitchen_type)
-                                            <b>{{ $kitchen_type }}</b>,
-                                        @endforeach
-                                    </span>
+                                        <b>Z ogrzewaniem</b>
                                     </div>
                                 @endif
-                                @if (is_array($flat->kitchen_type))
+                                @if(isset($houseRent->driveway))
                                     <div class="py-1">
-                                    <span>Media:
-                                        @foreach(json_decode($flat->media) as $media)
-                                            <b>{{ $media }}</b>,
-                                        @endforeach
-                                    </span>
+                                        <span>Droga dojazdowa: <b>{{ $houseRent->driveway }}</b></span>
                                     </div>
                                 @endif
-                                @if(isset($flat->heating))
+                                @if(isset($houseRent->balcony))
                                     <div class="py-1">
-                                        <span>Ogrzewanie: <b>{{ $flat->heating }}</b></span>
+                                        @if($houseRent->balcony === 1)
+                                            <span>Balkon: <b>Tak</b></span>
+                                        @else
+                                            <b>Nie</b>
+                                        @endif
                                     </div>
                                 @endif
-                                @if(isset($flat->parking))
+                                @if ($houseRent->water_connection)
                                     <div class="py-1">
-                                        <span>M-ce parkingowe: <b>{{ $flat->parking }}</b></span>
+                                        <span>Podłączenie wody: <b>{{ $houseRent->water_connection }}</b></span>
                                     </div>
                                 @endif
-                                @if(isset($flat->balcony))
+                                @if (isset($houseRent->decorated_garden))
                                     <div class="py-1">
-                                        <span>Balkon: <b>{{ $flat->balcony }}</b></span>
+                                        @if($houseRent->decorated_garden === 1)
+                                            <span>Ogród urządzony: <b>Tak</b></span>
+                                        @else
+                                            <b>Nie</b>
+                                        @endif
                                     </div>
                                 @endif
-                                @if(isset($flat->basement))
+                                @if (isset($houseRent->electricity))
                                     <div class="py-1">
-                                        <span>Piwnica: <b>{{ $flat->basement }}</b></span>
+                                        @if($houseRent->electricity === 1)
+                                            <span>Prąd: <b>Tak</b></span>
+                                        @else
+                                            <b>Nie</b>
+                                        @endif
                                     </div>
                                 @endif
-                                @if ($flat->lift === 1)
+                                @if (isset($houseRent->power))
                                     <div class="py-1">
-                                        <b>Winda</b>
+                                        @if($houseRent->power === 1)
+                                            <span>Siła: <b>Tak</b></span>
+                                        @else
+                                            <b>Nie</b>
+                                        @endif
                                     </div>
                                 @endif
-                                @if ($flat->furniture === 1)
+                                @if(isset($houseRent->sewers))
                                     <div class="py-1">
-                                        <b>Mieszkanie umeblowane</b>
+                                        <span>Kanalizacja: <b>{{ $houseRent->sewers }}</b></span>
                                     </div>
                                 @endif
-                                @if ($flat->fitted_kitchen === 1)
+                                @if(isset($houseRent->roof_type))
                                     <div class="py-1">
-                                        <b>Kuchnia wyposażona</b>
+                                        <span>Typ dachu: <b>{{ $houseRent->roof_type }}</b></span>
                                     </div>
                                 @endif
-                                @if(isset($flat->condition))
+                                @if(isset($houseRent->condition))
                                     <div class="py-1">
-                                        <span>Stan lokalu: <b>{{ $flat->condition }}</b></span>
+                                        <span>Stan budynku: <b>{{ $houseRent->condition }}</b></span>
                                     </div>
                                 @endif
-                                @if ($flat->exclusivity === 1)
+                                @if(isset($houseRent->exclusivity))
                                     <div class="py-1">
-                                        <b>Mieszkanie na wyłączność</b>
+                                        @if($houseRent->exclusivity === 1)
+                                            <span>Na wyłączność: <b>Tak</b></span>
+                                        @else
+                                            <b>Nie</b>
+                                        @endif
                                     </div>
                                 @endif
-                                @if ($flat->closed_estate == 1)
+                                @if(isset($houseRent->property_form))
                                     <div class="py-1">
-                                        <b>Osiedle zamknięte</b>
+                                        <span>Forma własności: <b>{{ $houseRent->property_form }}</b></span>
                                     </div>
                                 @endif
                                 <div class="py-1">
                                     Kontakt do pośrednika:<br>
-                                    @if(isset($flat->broker_phone))
-                                    tel: <b>{{ $flat->broker_phone }}</b>,
-                                    @endif
-                                    mail: <b>biuro@domiwa.nieruchomosci.pl</b>
+                                    tel: <b>{{ $houseRent->broker_phone }}</b>, mail:
+                                    <b>{{ $houseRent->broker_email }}</b>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +237,7 @@
                         <section class="py-8">
                             <div class="flex flex-wrap -mx-4 -mb-8">
                                 <div class="images">
-                                    @foreach(json_decode($flat->images) as $image)
+                                    @foreach(json_decode($houseRent->images) as $image)
                                         <div class="px-2 mb-8">
                                             <button>
                                                 <img class="modal-open img rounded shadow-md"

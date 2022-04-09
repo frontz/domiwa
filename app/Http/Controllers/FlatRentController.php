@@ -22,9 +22,9 @@ class FlatRentController extends Controller
     {
         $data = $request->all();
         $paginator = $request->input('paginator');
-        $flats_rent = FlatRent::paginate($paginator);
+        $flatsRent = FlatRent::paginate($paginator);
         return view('flats.index', [
-            'flats_rent' => $flats_rent, 'next_query' => $data
+            'flatsRent' => $flatsRent, 'next_query' => $data
         ]);
     }
 
@@ -101,7 +101,6 @@ class FlatRentController extends Controller
             array_push($images, $filePath);
         }
         $flatRent->images = json_encode($images);
-
             dump('Function good!');
             $flatRent->save();
             return redirect(route('offers'))->with('success', 'Oferta została utworzona.');
@@ -137,9 +136,8 @@ class FlatRentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function update(Request $request)
     {

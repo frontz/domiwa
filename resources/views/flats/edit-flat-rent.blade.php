@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="p-10 bg-orange-200">
-                        <form action="{{ route('flats-rent.update', $flatRent->id) }}" method="post"
+                        <form method="post" action="{{ route('flats-rent.update', $flatRent->id) }}"
                               enctype="multipart/form-data">
                             @csrf
                             <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 py-5 px-1">
