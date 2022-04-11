@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-blue-600 leading-tight">
-            Oferty domów
+            Oferty domów do wynajęcia
         </h2>
     </x-slot>
 
@@ -18,40 +18,40 @@
                         <!-- component -->
                         <div class="flex w-screen">
                             <div class="max-w-6xl">
-                                @if(sizeof($houses) === 0)
+                                @if(sizeof($housesRent) === 0)
                                     @include('layouts.nothing-found')
                                 @endif
                             </div>
                             <div class="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 max-w-6xl">
-                                @foreach($houses as $house)
+                                @foreach($housesRent as $houseRent)
                                     <div class="bg-gray-200 rounded-lg p-4 ml-4 text-center mb-4">
                                         <div class="h-40 bg-gray-400 rounded-lg">
-                                            <img src="{{ asset('storage/' . json_decode($house->images, true)[0]) }}"
+                                            <img src="{{ asset('storage/' . json_decode($houseRent->images, true)[0]) }}"
                                                  class="rounded flex" style="width: 350px; height: 200px">
                                         </div>
                                         <div class="mt-16">
-                                            <h4 class="text-xl font-semibold">{{ $house->title }}</h4>
-                                            <p class="text-sm mt-2">{{ $house->description }}</p>
-                                            <p class="text-sm mt-2 text-lg">{{ $house->city }}</p>
-                                            <p class="text-sm mt-2 font-bold">Powierzchnia: {{ $house->area }}
+                                            <h4 class="text-xl font-semibold">{{ $houseRent->title }}</h4>
+                                            <p class="text-sm mt-2">{{ $houseRent->description }}</p>
+                                            <p class="text-sm mt-2 text-lg">{{ $houseRent->city }}</p>
+                                            <p class="text-sm mt-2 font-bold">Powierzchnia: {{ $houseRent->area }}
                                                 m<sup>2</sup></p>
-                                            <p class="text-sm mt-2 italic">Cena: {{ $house->price }} PLN</p>
+                                            <p class="text-sm mt-2 italic">Cena: {{ $houseRent->price }} PLN</p>
 
                                             @if(Auth::guest())
-                                                <a href="{{ route('houses.show', $house->id) }}">
+                                                <a href="{{ route('houses.show', $houseRent->id) }}">
                                                     <button
                                                         class="transition duration-200 bg-blue-500 mt-4 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                                                         <span class="inline-block mx-2">Szczegóły >></span>
                                                     </button>
                                                 </a>
                                             @else
-                                                <a href="{{ route('houses.edit', $house->id) }}">
+                                                <a href="{{ route('houses-rent.edit', $houseRent->id) }}">
                                                     <button
                                                         class="transition duration-200 bg-green-500 mt-4 hover:bg-green-600 focus:bg-green-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                                                         <span class="inline-block mx-2">Edytuj</span>
                                                     </button>
                                                 </a>
-                                                <a href="{{ route('houses.delete', $house->id) }}">
+                                                <a href="{{ route('houses-rent.delete', $houseRent->id) }}">
                                                     @csrf
                                                     <button
                                                         class="transition duration-200 bg-red-500 mt-4 hover:bg-red-600 focus:bg-red-700 focus:shadow-sm focus:ring-blue-500 focus:ring-opacity-50 text-white py-2.5 px-2 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            {{ $houses->appends($next_query)->links() }}
+                            {{ $housesRent->appends($next_query)->links() }}
                         </div>
                     </div>
                 </div>

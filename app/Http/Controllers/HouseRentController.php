@@ -19,9 +19,9 @@ class HouseRentController extends Controller
     {
         $data = $request->all();
         $paginator = $request->input('paginator');
-        $houseRentsRent = HouseRent::paginate($paginator);
-        return view('flats.index', [
-            'housesRent' => $houseRentsRent, 'next_query' => $data
+        $housesRent = HouseRent::paginate($paginator);
+        return view('houses.index-rent', [
+            'housesRent' => $housesRent, 'next_query' => $data
         ]);
     }
 

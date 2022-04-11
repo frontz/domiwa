@@ -23,7 +23,7 @@ class FlatRentController extends Controller
         $data = $request->all();
         $paginator = $request->input('paginator');
         $flatsRent = FlatRent::paginate($paginator);
-        return view('flats.index', [
+        return view('flats.index-rent', [
             'flatsRent' => $flatsRent, 'next_query' => $data
         ]);
     }

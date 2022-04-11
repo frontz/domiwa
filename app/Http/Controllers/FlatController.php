@@ -18,7 +18,7 @@ class FlatController extends Controller
      *
      * @return View
      */
-    public function index(Request $request)
+    public function index(Request $request): View
     {
         $data = $request->all();
         $paginator = $request->input('paginator');
